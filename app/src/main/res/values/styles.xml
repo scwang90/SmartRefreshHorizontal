@@ -1,0 +1,190 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.TranslucentStatus" />
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="AppTheme.Toolbar" parent="Widget.AppCompat.ActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+    </style>
+
+    <style name="AppTheme.Toolbar.Light">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Light</item>
+    </style>
+
+
+    <style name="AppTheme.Division">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dimenDivisionLine</item>
+        <item name="android:dividerHeight">@dimen/dimenDivisionLine</item>
+        <item name="android:divider">@color/colorDivision</item>
+        <item name="android:background">@color/colorDivision</item>
+    </style>
+
+    <style name="AppTheme.Division.Middle">
+        <item name="android:layout_marginLeft">@dimen/dimenPaddingCommon</item>
+        <!--<item name="android:layout_marginStart">@dimen/dimenPaddingCommon</item>-->
+    </style>
+
+    <style name="AppTheme.Label">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/dimenTextContent</item>
+        <item name="android:textColor">@color/colorTextContent</item>
+    </style>
+
+    <style name="AppTheme.Label.Layout">
+        <item name="android:paddingTop">@dimen/dimenPaddingVertical</item>
+        <item name="android:paddingBottom">@dimen/dimenPaddingVertical</item>
+        <item name="android:paddingLeft">@dimen/dimenPaddingHorizontal</item>
+        <item name="android:paddingRight">@dimen/dimenPaddingHorizontal</item>
+    </style>
+
+    <style name="AppTheme.Label.Title">
+        <item name="android:textColor">@color/colorTextTitle</item>
+        <item name="android:textSize">@dimen/dimenTextTitle</item>
+    </style>
+
+    <style name="AppTheme.Label.Title.Large">
+        <item name="android:textSize">@dimen/dimenTextTitleLarge</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppTheme.Label.Title.Small">
+        <item name="android:textSize">@dimen/dimenTextTitleSmall</item>
+    </style>
+
+    <style name="AppTheme.Label.Small">
+        <item name="android:textSize">@dimen/dimenTextSmall</item>
+    </style>
+
+    <style name="AppTheme.Label.Description">
+        <item name="android:gravity">top</item>
+        <item name="android:lineSpacingExtra">5dp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textSize">@dimen/dimenTextContent</item>
+        <item name="android:singleLine">false</item>
+    </style>
+
+    <style name="AppTheme.Label.Assistant">
+        <item name="android:textColor">@color/colorTextAssistant</item>
+        <item name="android:textSize">@dimen/dimenTextContent</item>
+    </style>
+
+    <style name="AppTheme.ArrowRight">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_gravity">end|right|center_vertical</item>
+        <item name="android:background">@drawable/ic_chevron_right</item>
+    </style>
+
+    <style name="AppTheme.ArrowRight.Gray">
+        <item name="android:background">@drawable/ic_chevron_right_gray</item>
+    </style>
+
+    <style name="AppTheme.CommonBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="AppTheme.CommonBar.Panel">
+        <!--<item name="android:paddingTop">@dimen/dimenDivisionLine</item>-->
+        <!--<item name="android:paddingBottom">@dimen/dimenDivisionLine</item>-->
+        <item name="android:layout_marginTop">@dimen/dimenPaddingCommon</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/bc_background_panel</item>
+    </style>
+
+    <style name="AppTheme.CommonBar.PanelLayout">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingBottom">@dimen/dimenPaddingCommon</item>
+        <item name="android:background">@color/colorBackgroundDark</item>
+    </style>
+
+    <style name="AppTheme.CommonBar.Bar">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+        <item name="android:paddingLeft">@dimen/dimenPaddingCommon</item>
+        <item name="android:paddingRight">@dimen/dimenPaddingCommon</item>
+        <!--<item name="android:paddingTop">@dimen/dimenPaddingDiminutive</item>-->
+        <!--<item name="android:paddingBottom">@dimen/dimenPaddingDiminutive</item>-->
+
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <!--<item name="android:background">@drawable/af_selector_background_white</item>-->
+    </style>
+
+    <style name="AppTheme.CommonBar.Bar.Header">
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingLeft">@dimen/dimenPaddingCommon</item>
+        <item name="android:paddingRight">@dimen/dimenPaddingCommon</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="AppTheme.CommonBar.Bar.Alone">
+        <item name="android:layout_marginTop">@dimen/dimenPaddingCommon</item>
+        <item name="android:background">@drawable/bc_background_panel</item>
+    </style>
+
+    <style name="AppTheme.CommonBar.Content" parent="AppTheme.Label">
+        <item name="android:singleLine">false</item>
+        <!--<item name="android:layout_margin">@dimen/dimenPaddingDiminutive</item>-->
+        <item name="android:gravity">center_vertical</item>
+        <!--<item name="android:paddingTop">2dp</item>-->
+        <!--<item name="android:paddingBottom">2dp</item>-->
+        <!--<item name="android:paddingLeft">@dimen/dimenPaddingDiminutive</item>-->
+        <!--<item name="android:paddingRight">@dimen/dimenPaddingCommon</item>-->
+        <item name="android:paddingTop">@dimen/dimenPaddingCommon</item>
+        <item name="android:paddingBottom">@dimen/dimenPaddingCommon</item>
+        <item name="android:paddingLeft">@dimen/dimenPaddingDiminutive</item>
+        <item name="android:paddingRight">@dimen/dimenPaddingDiminutive</item>
+        <item name="android:drawablePadding">@dimen/dimenPaddingCommon</item>
+    </style>
+
+    <style name="AppTheme.CommonBar.Content.Value">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="AppTheme.CommonBar.Value" parent="AppTheme.Label.Description">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorTextAssistant</item>
+        <item name="android:gravity">right|end</item>
+        <item name="android:paddingTop">@dimen/dimenPaddingCommon</item>
+        <item name="android:paddingBottom">@dimen/dimenPaddingCommon</item>
+        <item name="android:paddingLeft">@dimen/dimenPaddingHorizontal</item>
+        <item name="android:paddingRight">@dimen/dimenPaddingDiminutive</item>
+        <item name="android:drawablePadding">@dimen/dimenPaddingCommon</item>
+        <!--<item name="android:layout_marginEnd">@dimen/dimenPaddingDiminutive</item>-->
+        <item name="android:layout_gravity">center_vertical|end</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+</resources>
