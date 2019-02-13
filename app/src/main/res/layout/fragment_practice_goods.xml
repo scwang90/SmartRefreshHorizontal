@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".fragment.GoodsPracticeFragment">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_panel_top">
+        <ImageView
+                android:id="@+id/toolbar_btn_go_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimenPaddingDiminutive"
+                android:padding="@dimen/dimenPaddingMin"
+                android:src="@drawable/ic_navigate_before_white_24dp"
+                android:background="@drawable/bg_round_alpha"
+                android:contentDescription="@string/app_name"/>
+
+        <RadioGroup
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+            <RadioButton style="@style/AppTheme.Label.Title"
+                         android:id="@+id/toolbar_rad_goods"
+                         android:layout_width="0dp"
+                         android:layout_weight="1"
+                         android:layout_height="match_parent"
+                         android:gravity="center"
+                         android:button="@null"
+                         android:background="@drawable/bg_tab_selected"
+                         android:text="@string/practice_goods_rad_goods"/>
+            <RadioButton style="@style/AppTheme.Label.Title"
+                         android:id="@+id/toolbar_rad_detail"
+                         android:layout_width="0dp"
+                         android:layout_weight="1"
+                         android:layout_height="match_parent"
+                         android:gravity="center"
+                         android:button="@null"
+                         android:text="@string/practice_goods_rad_detail"/>
+            <RadioButton style="@style/AppTheme.Label.Title"
+                         android:id="@+id/toolbar_rad_comment"
+                         android:layout_width="0dp"
+                         android:layout_weight="1"
+                         android:layout_height="match_parent"
+                         android:gravity="center"
+                         android:button="@null"
+                         android:text="@string/practice_goods_rad_comment"/>
+        </RadioGroup>
+
+
+        <ImageView
+                android:id="@+id/toolbar_btn_trolley"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimenPaddingDiminutive"
+                android:padding="@dimen/dimenPaddingMin"
+                android:src="@drawable/ic_trolley_white_24dp"
+                android:background="@drawable/bg_round_alpha"
+                android:contentDescription="@string/app_name"/>
+
+        <ImageView
+                android:id="@+id/toolbar_btn_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimenPaddingDiminutive"
+                android:padding="@dimen/dimenPaddingMin"
+                android:src="@drawable/ic_more_white_24dp"
+                android:background="@drawable/bg_round_alpha"
+                android:contentDescription="@string/app_name"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_panel_bottom">
+
+        <TextView style="@style/AppTheme.Label.Min"
+                  android:id="@+id/practice_goods_service"
+                  android:layout_width="wrap_content"
+                  android:layout_height="match_parent"
+                  android:gravity="center"
+                  android:paddingTop="@dimen/dimenPaddingMin"
+                  android:paddingLeft="@dimen/dimenPaddingHorizontal"
+                  android:paddingRight="@dimen/dimenPaddingHorizontal"
+                  android:drawableTop="@drawable/ic_service_gray_24dp"
+                  android:text="@string/practice_goods_service"/>
+        <TextView style="@style/AppTheme.Label.Min"
+                  android:id="@+id/practice_goods_store"
+                  android:layout_width="wrap_content"
+                  android:layout_height="match_parent"
+                  android:gravity="center"
+                  android:paddingTop="@dimen/dimenPaddingMin"
+                  android:paddingLeft="@dimen/dimenPaddingHorizontal"
+                  android:paddingRight="@dimen/dimenPaddingHorizontal"
+                  android:drawableTop="@drawable/ic_store_gray_24dp"
+                  android:text="@string/practice_goods_store"/>
+        <TextView style="@style/AppTheme.Label.Min"
+                  android:id="@+id/practice_goods_collect"
+                  android:layout_width="wrap_content"
+                  android:layout_height="match_parent"
+                  android:gravity="center"
+                  android:paddingTop="@dimen/dimenPaddingMin"
+                  android:paddingLeft="@dimen/dimenPaddingHorizontal"
+                  android:paddingRight="@dimen/dimenPaddingHorizontal"
+                  android:drawableTop="@drawable/ic_star_gray_24dp"
+                  android:text="@string/practice_goods_collect"/>
+        <TextView style="@style/AppTheme.Label.Title"
+                  android:id="@+id/practice_goods_trolley"
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="5"
+                  android:gravity="center"
+                  android:background="@android:color/holo_orange_dark"
+                  android:textColor="@android:color/white"
+                  android:text="@string/practice_goods_trolley"/>
+        <TextView style="@style/AppTheme.Label.Title"
+                  android:id="@+id/practice_goods_buy"
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="5"
+                  android:gravity="center"
+                  android:background="@android:color/holo_red_light"
+                  android:textColor="@android:color/white"
+                  android:text="@string/practice_goods_buy"/>
+    </LinearLayout>
+
+</FrameLayout>
