@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 28
@@ -33,4 +34,13 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     compileOnly 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-20'
+}
+
+publish {
+    userOrg = 'scwang90'
+    groupId = 'com.scwang.smartrefresh'
+    artifactId = 'SmartRefreshHorizontal'
+    publishVersion = '0.0.1'
+    desc = 'An intelligent refresh layout with horizontal'
+    website = "https://github.com/scwang90/${rootProject.name}"
 }

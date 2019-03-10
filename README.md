@@ -2,14 +2,15 @@
 
 [![License](https://img.shields.io/badge/License%20-Apache%202-337ab7.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![MinSdk](https://img.shields.io/badge/%20MinSdk%20-%2012%2B%20-f0ad4e.svg)](https://android-arsenal.com/api?level=12)
+[![JCenter](https://img.shields.io/badge/%20JCenter%20-0.0.1-5bc0de.svg)](https://bintray.com/scwang90/maven/SmartRefreshHorizontal/_latestVersion)
 [![Author](https://img.shields.io/badge/Author-scwang90-11bbff.svg)](https://github.com/scwang90)
 
 ## [English](https://github.com/scwang90/SmartRefreshHorizontal/blob/master/README_EN.md) | 中文
 
 SmartRefreshHorizontal 作为 SmartRefreshLayout 的扩展库，实现了横向刷新和加载的功能。
-虽然 SmartRefreshHorizontal 作为一个独立的开源库，但是并没有重复做实现，
+虽然作为一个独立的开源库，但是并没有重复做实现，
 而是对 SmartRefreshLayout 做了封装和转换，使其支持横向刷新。
-所以 SmartRefreshHorizontal 集成了 SmartRefreshLayout 所有的特性，只是方向改成了横向。
+所以 SmartRefreshHorizontal 继承了 SmartRefreshLayout 所有的特性，只是方向改成了横向。
 
 
 ## 特点功能:
@@ -31,6 +32,39 @@ SmartRefreshHorizontal 作为 SmartRefreshLayout 的扩展库，实现了横向�
 [下载 APK-Demo](https://github.com/scwang90/SmartRefreshHorizontal/raw/master/art/app-release.apk)
 
 ![](https://github.com/scwang90/SmartRefreshHorizontal/raw/master/art/png_apk_rqcode.png)
+
+## 简单用例
+
+### 1. 在 build.gradle 中添加依赖
+```gradle
+    implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:0.0.1'
+```
+
+### 2. 在XML布局文件中添加 SmartRefreshHorizontal
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<com.scwang.smartrefresh.layout.SmartRefreshHorizontal xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/refreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:orientation="horizontal"
+        android:background="#fff" />
+</com.scwang.smartrefresh.layout.SmartRefreshHorizontal>
+```
+### 3. 在 Activity 或者 Fragment 中添加代码
+```java
+
+   RefreshLayout refreshLayout = root.findViewById(R.id.refreshLayout);
+   refreshLayout.setRefreshHeader(new MaterialHeader(root.getContext()));
+   refreshLayout.setRefreshFooter(new RefreshFooterWrapper(new MaterialHeader(root.getContext())), -1, -2);
+
+```
+
 
 ## 混淆
 

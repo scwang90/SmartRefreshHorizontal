@@ -50,7 +50,9 @@ dependencies {
     implementation project(':library')
 
 
-    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-20'
-    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-20'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-21'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-21'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:0.0.1'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.44'
+
 }
