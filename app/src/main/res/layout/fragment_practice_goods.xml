@@ -14,17 +14,21 @@
             android:layout_height="0dp">
 
 
-        <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                          android:orientation="vertical">
-                <android.support.v4.view.ViewPager android:layout_width="match_parent"
-                                                   android:layout_height=""></android.support.v4.view.ViewPager>
-                <ImageView android:layout_width="match_parent" android:layout_height="wrap_content"
-                           android:adjustViewBounds="true"
-                           android:contentDescription="@string/app_name"
-                           android:src="@mipmap/image_goods_detail_mi"/>
-            </LinearLayout>
-        </ScrollView>
+        <!--<ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">-->
+            <!--<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"-->
+                          <!--android:orientation="vertical">-->
+                <!---->
+            <!--</LinearLayout>-->
+        <!--</ScrollView>-->
+        <android.support.v4.view.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <ImageView android:layout_width="match_parent" android:layout_height="wrap_content"
+                       android:adjustViewBounds="true"
+                       android:contentDescription="@string/app_name"
+                       android:src="@mipmap/image_goods_detail_mi"/>
+        </android.support.v4.view.ViewPager>
 
         <LinearLayout
                 android:layout_width="match_parent"
@@ -41,38 +45,73 @@
                     android:background="@drawable/bg_round_alpha"
                     android:contentDescription="@string/app_name"/>
 
-            <RadioGroup
+            <FrameLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-                <RadioButton style="@style/AppTheme.Label.Title"
-                             android:id="@+id/toolbar_rad_goods"
-                             android:layout_width="0dp"
-                             android:layout_weight="1"
-                             android:layout_height="match_parent"
-                             android:gravity="center"
-                             android:button="@null"
-                             android:background="@drawable/bg_tab_selected"
-                             android:text="@string/practice_goods_rad_goods"/>
-                <RadioButton style="@style/AppTheme.Label.Title"
-                             android:id="@+id/toolbar_rad_detail"
-                             android:layout_width="0dp"
-                             android:layout_weight="1"
-                             android:layout_height="match_parent"
-                             android:gravity="center"
-                             android:button="@null"
-                             android:text="@string/practice_goods_rad_detail"/>
-                <RadioButton style="@style/AppTheme.Label.Title"
-                             android:id="@+id/toolbar_rad_comment"
-                             android:layout_width="0dp"
-                             android:layout_weight="1"
-                             android:layout_height="match_parent"
-                             android:gravity="center"
-                             android:button="@null"
-                             android:text="@string/practice_goods_rad_comment"/>
-            </RadioGroup>
-
+                    android:layout_weight="1">
+                <RadioGroup
+                        tools:visibility="visible"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                    <RadioButton style="@style/AppTheme.Label.Title"
+                                 android:id="@+id/toolbar_rad_goods"
+                                 android:layout_width="0dp"
+                                 android:layout_weight="1"
+                                 android:layout_height="match_parent"
+                                 android:gravity="center"
+                                 android:button="@null"
+                                 android:background="@drawable/bg_tab_selected"
+                                 android:text="@string/practice_goods_rad_goods"/>
+                    <RadioButton style="@style/AppTheme.Label.Title"
+                                 android:id="@+id/toolbar_rad_detail"
+                                 android:layout_width="0dp"
+                                 android:layout_weight="1"
+                                 android:layout_height="match_parent"
+                                 android:gravity="center"
+                                 android:button="@null"
+                                 android:text="@string/practice_goods_rad_detail"/>
+                    <RadioButton style="@style/AppTheme.Label.Title"
+                                 android:id="@+id/toolbar_rad_comment"
+                                 android:layout_width="0dp"
+                                 android:layout_weight="1"
+                                 android:layout_height="match_parent"
+                                 android:gravity="center"
+                                 android:button="@null"
+                                 android:text="@string/practice_goods_rad_comment"/>
+                </RadioGroup>
+                <com.ogaclejapan.smarttablayout.SmartTabLayout
+                        android:id="@+id/tabLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:stl_indicatorAlwaysInCenter="false"
+                        app:stl_indicatorWithoutPadding="false"
+                        app:stl_indicatorInFront="true"
+                        app:stl_indicatorInterpolation="smart"
+                        app:stl_indicatorGravity="bottom"
+                        app:stl_indicatorColor="@android:color/holo_red_dark"
+                        app:stl_indicatorThickness="1.5dp"
+                        app:stl_indicatorWidth="auto"
+                        app:stl_indicatorCornerRadius="2dp"
+                        app:stl_overlineColor="#4D000000"
+                        app:stl_overlineThickness="0dp"
+                        app:stl_underlineColor="#4D000000"
+                        app:stl_underlineThickness="0dp"
+                        app:stl_dividerColor="#4D000000"
+                        app:stl_dividerThickness="@dimen/dimenDivisionLine"
+                        app:stl_defaultTabBackground="?attr/selectableItemBackground"
+                        app:stl_defaultTabTextAllCaps="true"
+                        app:stl_defaultTabTextColor="#FC000000"
+                        app:stl_defaultTabTextSize="12sp"
+                        app:stl_defaultTabTextHorizontalPadding="16dp"
+                        app:stl_defaultTabTextMinWidth="0dp"
+                        app:stl_distributeEvenly="true"
+                        app:stl_clickable="true"
+                        app:stl_titleOffset="24dp"
+                        app:stl_drawDecorationAfterTab="false"
+                />
+            </FrameLayout>
 
             <ImageView
                     android:id="@+id/toolbar_btn_trolley"

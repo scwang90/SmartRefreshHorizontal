@@ -55,4 +55,6 @@ dependencies {
     implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:0.0.1'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.44'
 
+    implementation 'com.ogaclejapan.smarttablayout:library:1.7.0@aar'
+    implementation 'com.ogaclejapan.smarttablayout:utils-v4:1.7.0@aar'
 }
