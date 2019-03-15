@@ -29,15 +29,15 @@ class GoodsPracticeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter = FragmentPagerItemAdapter(
-            childFragmentManager, FragmentPagerItems.with(context)
-                .add(R.string.practice_goods_rad_goods, PageFragment::class.java)
-                .add(R.string.practice_goods_rad_detail, PageFragment::class.java)
-                .add(R.string.practice_goods_rad_comment, PageFragment::class.java)
-                .create()
-        )
-
-        viewPager.adapter = adapter
+//        val adapter = FragmentPagerItemAdapter(
+//            childFragmentManager, FragmentPagerItems.with(context)
+//                .add(R.string.practice_goods_rad_goods, PageFragment::class.java)
+//                .add(R.string.practice_goods_rad_detail, PageFragment::class.java)
+//                .add(R.string.practice_goods_rad_comment, PageFragment::class.java)
+//                .create()
+//        )
+//
+//        viewPager.adapter = adapter
         tabLayout.setViewPager(viewPager)
     }
 
