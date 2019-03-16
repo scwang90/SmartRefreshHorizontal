@@ -10,8 +10,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    val goodsFragment: Fragment = GoodsPracticeFragment()
-
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
@@ -21,7 +19,7 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.navigation_dashboard -> {
                 message.setText(R.string.title_dashboard)
-                supportFragmentManager.beginTransaction().replace(R.id.fragment, goodsFragment).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.fragment, GoodsPracticeFragment()).commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
