@@ -7,8 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
-import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter
-import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems
 import com.scwang.smartrefresh.horizontal.demo.R
 import kotlinx.android.synthetic.main.fragment_practice_goods.*
 
@@ -18,12 +16,17 @@ import kotlinx.android.synthetic.main.fragment_practice_goods.*
  */
 class GoodsPracticeFragment : Fragment() {
 
+    var root: View? = null
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_practice_goods, container, false)
+        if (root == null) {
+            root = inflater.inflate(R.layout.fragment_practice_goods, container, false)
+        }
+        return root
     }
 
 
