@@ -6,15 +6,20 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import com.scwang.smartrefresh.horizontal.demo.fragment.GoodsPracticeFragment
 import com.scwang.smartrefresh.horizontal.demo.fragment.HorizontalExampleFragment
+import com.scwang.smartrefresh.horizontal.demo.fragment.index.IndexHomeFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    private val homeFragment: Fragment by lazy {
+        IndexHomeFragment()
+    }
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
                 message.setText(R.string.title_home)
-                supportFragmentManager.beginTransaction().replace(R.id.fragment, HorizontalExampleFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.fragment, homeFragment).commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {

@@ -2,26 +2,18 @@ package com.scwang.smartrefresh.horizontal.demo.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 import com.scwang.smartrefresh.horizontal.demo.R;
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
 /**
  * 智能分页器
@@ -37,6 +29,47 @@ public class SmartViewPager extends ViewPager {
 
     public SmartViewPager(Context context, AttributeSet attrs) {
         super(context, attrs);
+    }
+
+    /**
+     * @param id the id of the view to be found
+     * @return the view of the specified id, null if cannot be found
+     */
+    @SuppressWarnings({"unchecked", "unused"})
+    protected <T extends View> T findViewTraversal(@IdRes int id) {
+        if (mAdapter != null && mAdapter.views != null) {
+            for (View view : mAdapter.views) {
+                View find = view.findViewById(id);
+                if (find != null) {
+                    return (T)find;
+                }
+            }
+        }
+        for (int i = 0, len = getChildCount(); i < len; i++) {
+            View child = getChildAt(i);
+            View find = child.findViewById(id);
+            if (find != null) {
+                return (T)find;
+            }
+        }
+        if (getId() == id) {
+            return (T)this;
+        }
+        return null;
+    }
+
+    @Override
+    protected void onFinishInflate() {
+        super.onFinishInflate();
+        int childCount = getChildCount();
+        if (getAdapter() == null) {
+            if (childCount > 0) {
+                setAdapter(mAdapter = new SmartPagerAdapter());
+                removeAllViews();
+            }
+        } else if (childCount > 0) {
+            removeAllViews();
+        }
     }
 
     @Override
@@ -65,71 +98,23 @@ public class SmartViewPager extends ViewPager {
         }
     }
 
-    protected <T extends View> T findViewTraversal(@IdRes int id) {
-        if (id == getId()) {
-            //noinspection unchecked
-            return (T) this;
-        }
-        if (mAdapter != null) {
-            for (View view : mAdapter.views) {
-                View tmp = view.findViewById(id);
-                if (tmp != null) {
-                    //noinspection unchecked
-                    return (T)tmp;
-                }
-            }
-        }
-        return null;
-    }
-
     //<editor-fold desc="布局参数 LayoutParams">
-    @Override
-    protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
-        return p instanceof LayoutParams;
-    }
-
-    @Override
-    protected LayoutParams generateDefaultLayoutParams() {
-        return new LayoutParams(MATCH_PARENT, MATCH_PARENT);
-    }
-
-    @Override
-    protected LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
-        return new LayoutParams(p);
-    }
-
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
         final View thisView = this;
         return new LayoutParams(thisView.getContext(), attrs);
     }
 
-    public static class LayoutParams extends MarginLayoutParams {
+    public static class LayoutParams extends ViewPager.LayoutParams {
 
-        public LayoutParams(Context context, AttributeSet attrs) {
+        LayoutParams(Context context, AttributeSet attrs) {
             super(context, attrs);
-            TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.SmartRefreshLayout_Layout);
-            backgroundColor = ta.getColor(R.styleable.SmartRefreshLayout_Layout_layout_srlBackgroundColor, backgroundColor);
-            if (ta.hasValue(R.styleable.SmartRefreshLayout_Layout_layout_srlSpinnerStyle)) {
-                spinnerStyle = SpinnerStyle.values()[ta.getInt(R.styleable.SmartRefreshLayout_Layout_layout_srlSpinnerStyle, SpinnerStyle.Translate.ordinal())];
-            }
+            TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.SmartViewPager_Layout);
+            title = ta.getString(R.styleable.SmartViewPager_Layout_layout_svpTitle);
             ta.recycle();
         }
 
-        public LayoutParams(int width, int height) {
-            super(width, height);
-        }
-
-        public LayoutParams(MarginLayoutParams source) {
-            super(source);
-        }
-
-        public LayoutParams(ViewGroup.LayoutParams source) {
-            super(source);
-        }
-
-        public int backgroundColor = 0;
-        public SpinnerStyle spinnerStyle = null;
+        String title;
     }
     //</editor-fold>
 
@@ -143,6 +128,19 @@ public class SmartViewPager extends ViewPager {
             for (int i = 0; i < count; i++) {
                 views.add(getChildAt(i));
             }
+        }
+
+        @Nullable
+        @Override
+        public CharSequence getPageTitle(int position) {
+            View view = views.get(position);
+            ViewGroup.LayoutParams lp = view.getLayoutParams();
+            if (lp instanceof LayoutParams) {
+                if (((LayoutParams) lp).title != null) {
+                    return ((LayoutParams) lp).title;
+                }
+            }
+            return super.getPageTitle(position);
         }
 
         @Override

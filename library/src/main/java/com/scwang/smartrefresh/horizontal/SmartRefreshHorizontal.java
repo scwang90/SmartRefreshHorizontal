@@ -34,15 +34,11 @@ public class SmartRefreshHorizontal extends ViewGroup implements RefreshLayout {
 
     public SmartRefreshHorizontal(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        DefaultRefreshInitializer old = null;
-        if (sRefreshInitializer != null) {
-            old = SmartRefreshImpl.getRefreshInitializer();
-            SmartRefreshImpl.setRefreshInitializer(sRefreshInitializer);
-        }
+
+        DefaultRefreshInitializer old = SmartRefreshImpl.getRefreshInitializer();
+        SmartRefreshImpl.setRefreshInitializer(new DefaultHorizontalInitializer(sRefreshInitializer));
         mRefreshLayout = new SmartRefreshImpl(context, attrs, defStyleAttr);
-        if (sRefreshInitializer != null) {
-            SmartRefreshImpl.setRefreshInitializer(old);
-        }
+        SmartRefreshImpl.setRefreshInitializer(old);
         mRefreshLayout.setScrollBoundaryDecider(new ScrollBoundaryDeciderAdapter(){
             @Override
             public boolean canRefresh(View content) {
@@ -102,7 +98,7 @@ public class SmartRefreshHorizontal extends ViewGroup implements RefreshLayout {
         if (sHeaderCreator != null && mRefreshLayout.getRefreshHeader() == null) {
             mRefreshLayout.setRefreshHeader(sHeaderCreator.createRefreshHeader(getContext(), this));
         }
-        if (sFooterCreator != null && mRefreshLayout.getRefreshHeader() == null) {
+        if (sFooterCreator != null && mRefreshLayout.getRefreshFooter() == null) {
             mRefreshLayout.setRefreshFooter(sFooterCreator.createRefreshFooter(getContext(), this));
         }
         if (mRefreshLayout.getParent() == null) {
@@ -374,8 +370,13 @@ public class SmartRefreshHorizontal extends ViewGroup implements RefreshLayout {
     }
 
     @Override
-    public RefreshLayout finishRefresh(int delayed, boolean success) {
-        return mRefreshLayout.finishRefresh(delayed, success);
+    public RefreshLayout finishRefresh(int delayed, boolean success, Boolean noMoreData) {
+        return mRefreshLayout.finishRefresh(delayed, success, noMoreData);
+    }
+
+    @Override
+    public RefreshLayout finishRefreshWithNoMoreData() {
+        return mRefreshLayout.finishRefreshWithNoMoreData();
     }
 
     @Override
@@ -469,11 +470,11 @@ public class SmartRefreshHorizontal extends ViewGroup implements RefreshLayout {
         return mRefreshLayout.autoLoadMore();
     }
 
-    @Override
-    @Deprecated
-    public boolean autoLoadMore(int delayed) {
-        return mRefreshLayout.autoLoadMore(delayed);
-    }
+//    @Override
+//    @Deprecated
+//    public boolean autoLoadMore(int delayed) {
+//        return mRefreshLayout.autoLoadMore(delayed);
+//    }
 
     @Override
     public boolean autoLoadMoreAnimationOnly() {
@@ -485,4 +486,21 @@ public class SmartRefreshHorizontal extends ViewGroup implements RefreshLayout {
         return mRefreshLayout.autoLoadMore(delayed, duration, dragRate, animationOnly);
     }
     //</editor-fold>
+
+
+    static class DefaultHorizontalInitializer implements DefaultRefreshInitializer {
+        DefaultRefreshInitializer initializer;
+
+        public DefaultHorizontalInitializer(DefaultRefreshInitializer initializer) {
+            this.initializer = initializer;
+        }
+
+        @Override
+        public void initialize(@NonNull Context context, @NonNull RefreshLayout layout) {
+            layout.setEnableLoadMore(true);
+            if (initializer != null) {
+                initializer.initialize(context, layout);
+            }
+        }
+    }
 }

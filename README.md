@@ -43,7 +43,7 @@ SmartRefreshHorizontal 作为 SmartRefreshLayout 的扩展库，实现了横向�
 ### 2. 在XML布局文件中添加 SmartRefreshHorizontal
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<com.scwang.smartrefresh.layout.SmartRefreshHorizontal xmlns:android="http://schemas.android.com/apk/res/android"
+<com.scwang.smartrefresh.horizontal.SmartRefreshHorizontal xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/refreshLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -54,11 +54,10 @@ SmartRefreshHorizontal 作为 SmartRefreshLayout 的扩展库，实现了横向�
         android:overScrollMode="never"
         android:orientation="horizontal"
         android:background="#fff" />
-</com.scwang.smartrefresh.layout.SmartRefreshHorizontal>
+</com.scwang.smartrefresh.horizontal.SmartRefreshHorizontal>
 ```
 ### 3. 在 Activity 或者 Fragment 中添加代码
 ```java
-
    RefreshLayout refreshLayout = root.findViewById(R.id.refreshLayout);
    refreshLayout.setRefreshHeader(new MaterialHeader(root.getContext()));
    refreshLayout.setRefreshFooter(new RefreshFooterWrapper(new MaterialHeader(root.getContext())), -1, -2);

@@ -5,8 +5,10 @@
     <string name="title_notifications">Notifications</string>
     <string name="item_example_number_title">Item %02d</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="practice_goods_fragment_title">商品详情</string>
+    <string name="practice_goods_fragment_description">商品详情幻灯片左右刷新拖动</string>
     <string name="practice_goods_rad_goods">商品</string>
     <string name="practice_goods_rad_detail">详情</string>
     <string name="practice_goods_rad_comment">评论</string>
@@ -15,4 +17,8 @@
     <string name="practice_goods_service">客服</string>
     <string name="practice_goods_buy">立即购买</string>
     <string name="practice_goods_trolley">加入购物车</string>
+
+    <string name="footer_detail_horizontal_pulling">滑动查看图文详情</string>
+    <string name="footer_detail_horizontal_release">释放查看图文详情</string>
+
 </resources>
