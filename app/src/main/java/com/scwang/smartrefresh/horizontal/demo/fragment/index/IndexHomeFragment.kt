@@ -13,14 +13,16 @@ import com.scwang.smartrefresh.horizontal.demo.R
 import com.scwang.smartrefresh.horizontal.demo.activity.FragmentActivity
 import com.scwang.smartrefresh.horizontal.demo.adapter.BaseRecyclerAdapter
 import com.scwang.smartrefresh.horizontal.demo.adapter.SmartViewHolder
-import com.scwang.smartrefresh.horizontal.demo.fragment.GoodsPracticeFragment
+import com.scwang.smartrefresh.horizontal.demo.fragment.PracticeGoodsFragment
+import com.scwang.smartrefresh.horizontal.demo.fragment.PracticePagerFragment
 import kotlinx.android.synthetic.main.fragment_index_home.*
 import kotlin.reflect.KClass
 
 class IndexHomeFragment : Fragment() {
 
     enum class HomeItem(@StringRes val titleId: Int, @StringRes val descriptionId: Int, val fragment: KClass<out Fragment>) {
-        Goods(R.string.practice_goods_fragment_title, R.string.practice_goods_fragment_description, GoodsPracticeFragment::class)
+        Goods(R.string.practice_goods_fragment_title, R.string.practice_goods_fragment_description, PracticeGoodsFragment::class),
+        Pager(R.string.practice_pager_fragment_title,R.string.practice_pager_fragment_description,PracticePagerFragment::class)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

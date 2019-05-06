@@ -6,7 +6,7 @@
               android:layout_height="match_parent"
               android:orientation="vertical"
               android:background="@color/colorBackgroundDark"
-              tools:context=".fragment.GoodsPracticeFragment">
+              tools:context=".fragment.PracticeGoodsFragment">
 
     <FrameLayout
             android:layout_width="match_parent"
@@ -76,6 +76,7 @@
                         android:layout_height="wrap_content"/>
             </com.scwang.smartrefresh.layout.SmartRefreshLayout>
             <ScrollView
+                    android:id="@+id/pager1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:paddingTop="45dp"
@@ -87,6 +88,7 @@
                            android:src="@mipmap/image_detail_description_mi"/>
             </ScrollView>
             <ScrollView
+                    android:id="@+id/pager2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:paddingTop="45dp"
@@ -122,7 +124,6 @@
                         android:src="@drawable/ic_navigate_before_white_24dp"
                         android:background="@drawable/bg_round_alpha"
                         android:contentDescription="@string/app_name"/>
-
                 <FrameLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"

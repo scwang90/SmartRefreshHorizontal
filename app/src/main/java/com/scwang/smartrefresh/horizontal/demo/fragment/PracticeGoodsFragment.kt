@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.fragment_practice_goods.*
  * A simple [Fragment] subclass.
  *
  */
-class GoodsPracticeFragment : Fragment() {
+class PracticeGoodsFragment : Fragment() {
 
     var pageIndex = 0
     var darkMode = false
@@ -55,6 +55,10 @@ class GoodsPracticeFragment : Fragment() {
             viewPager.currentItem = 1
         }
 
+        toolbar_btn_go_back.setOnClickListener {
+            activity?.finish()
+        }
+
 //        ImmersionBar.with(this).titleBarMarginTop()
 //        StatusBarUtil.setDarkMode(activity)
 //        StatusBarUtil.setColor(activity, 0,0)
@@ -63,6 +67,8 @@ class GoodsPracticeFragment : Fragment() {
         StatusBarUtil.immersive(activity)
         StatusBarUtil.setHeight(activity, toolbar)
         StatusBarUtil.setPaddingSmart(activity, toolbar_content)
+        StatusBarUtil.setPaddingSmart(activity, pager1)
+        StatusBarUtil.setPaddingSmart(activity, pager2)
 
     }
 

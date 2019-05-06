@@ -18,6 +18,12 @@
     <string name="practice_goods_buy">立即购买</string>
     <string name="practice_goods_trolley">加入购物车</string>
 
+    <string name="practice_pager_fragment_title">页面切换</string>
+    <string name="practice_pager_fragment_description">页面切换左右刷新拖动</string>
+    <string name="practice_pager_pager_title_1">Index 1</string>
+    <string name="practice_pager_pager_title_2">Index 2</string>
+    <string name="practice_pager_pager_title_3">Index 3</string>
+
     <string name="footer_detail_horizontal_pulling">滑动查看图文详情</string>
     <string name="footer_detail_horizontal_release">释放查看图文详情</string>
 
