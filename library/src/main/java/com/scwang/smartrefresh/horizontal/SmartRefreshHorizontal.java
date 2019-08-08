@@ -29,15 +29,11 @@ public class SmartRefreshHorizontal extends ViewGroup implements RefreshLayout {
     }
 
     public SmartRefreshHorizontal(Context context, AttributeSet attrs) {
-        this(context, attrs, 0);
-    }
-
-    public SmartRefreshHorizontal(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
+        super(context, attrs);
 
         DefaultRefreshInitializer old = SmartRefreshImpl.getRefreshInitializer();
         SmartRefreshImpl.setRefreshInitializer(new DefaultHorizontalInitializer(sRefreshInitializer));
-        mRefreshLayout = new SmartRefreshImpl(context, attrs, defStyleAttr);
+        mRefreshLayout = new SmartRefreshImpl(context, attrs);
         SmartRefreshImpl.setRefreshInitializer(old);
         mRefreshLayout.setScrollBoundaryDecider(new ScrollBoundaryDeciderAdapter(){
             @Override

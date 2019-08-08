@@ -54,10 +54,10 @@ dependencies {
     implementation 'com.gyf.immersionbar:immersionbar:3.0.0-beta02'
     implementation 'com.jaeger.statusbarutil:library:1.5.1'
 
-    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-24'
-    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-24'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-bata-1'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-bata-1'
 //    implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:0.0.1'
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.44'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46'
 
     implementation 'com.ogaclejapan.smarttablayout:library:1.7.0@aar'
     implementation 'com.ogaclejapan.smarttablayout:utils-v4:1.7.0@aar'
