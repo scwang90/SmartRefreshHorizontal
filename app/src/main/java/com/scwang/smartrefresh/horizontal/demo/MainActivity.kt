@@ -4,8 +4,9 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import com.scwang.smartrefresh.horizontal.demo.fragment.PracticeGoodsFragment
-import com.scwang.smartrefresh.horizontal.demo.fragment.HorizontalExampleFragment
+import com.scwang.smartrefresh.horizontal.demo.fragment.ExampleBasicFragment
 import com.scwang.smartrefresh.horizontal.demo.fragment.index.IndexHomeFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -29,7 +30,9 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.navigation_notifications -> {
                 message.setText(R.string.title_notifications)
-                supportFragmentManager.beginTransaction().replace(R.id.fragment, HorizontalExampleFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.fragment,
+                    ExampleBasicFragment()
+                ).commit()
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -41,7 +44,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        navigation.visibility = View.GONE
 
-        supportFragmentManager.beginTransaction().replace(R.id.fragment, HorizontalExampleFragment()).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.fragment, IndexHomeFragment()).commit()
     }
 }

@@ -11,3 +11,4 @@
 /captures
 .externalNativeBuild
 bintrayUpload-key.bat
+.*

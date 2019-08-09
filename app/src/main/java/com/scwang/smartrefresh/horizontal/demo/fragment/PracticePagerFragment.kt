@@ -12,6 +12,7 @@ import com.scwang.smartrefresh.horizontal.demo.R
 import com.scwang.smartrefresh.layout.api.RefreshHeader
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener
 import kotlinx.android.synthetic.main.fragment_practice_pager.*
+import kotlinx.android.synthetic.main.fragment_practice_pager.refreshLayout
 
 /**
  * A simple [Fragment] subclass.
@@ -30,21 +31,25 @@ class PracticePagerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        toolbar.setNavigationOnClickListener {
+            activity?.finish()
+        }
+
         refreshLayout.setOnMultiPurposeListener(object : SimpleMultiPurposeListener() {
             override fun onHeaderStartAnimator(h: RefreshHeader?, footerHeight: Int, maxDragHeight: Int) {
-                (header.drawable as Animatable).start()
+                (header.drawable as? Animatable)?.start()
             }
 
             override fun onHeaderFinish(h: RefreshHeader?, success: Boolean) {
-                (header.drawable as Animatable).stop()
+                (header.drawable as? Animatable)?.stop()
             }
         })
 
         refreshLayout.setOnRefreshListener {
-            refreshLayout.finishRefresh(3000)
+            refreshLayout.finishRefresh(1500)
         }
         refreshLayout.setOnLoadMoreListener {
-            refreshLayout.finishLoadMore(3000)
+            refreshLayout.finishLoadMore(1000)
         }
     }
 

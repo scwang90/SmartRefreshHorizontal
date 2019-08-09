@@ -21,12 +21,12 @@ SmartRefreshHorizontal 作为 SmartRefreshLayout 的扩展库，实现了横向�
 
 ## 传送门
 
- - [属性文档(尽请期待)](#)
- - [常见问题(尽请期待)](#)
- - [更新日志(尽请期待)](#)
+ - [属性文档](https://github.com/scwang90/SmartRefreshLayout/blob/master/art/md_property.md)
+ - [常见问题](https://github.com/scwang90/SmartRefreshLayout/blob/master/art/md_faq.md)
+ - [更新日志](https://github.com/scwang90/SmartRefreshHorizontal/blob/master/art/md_update.md)
  - [博客文章(尽请期待)](#)
  - [源码下载](https://github.com/scwang90/SmartRefreshHorizontal/releases)
- - [自定义Header(尽请期待)](#)
+ - [自定义Header](https://github.com/scwang90/SmartRefreshLayout/blob/master/art/md_custom.md)
 
 ## Demo
 [下载 APK-Demo](https://github.com/scwang90/SmartRefreshHorizontal/raw/master/art/app-release.apk)
@@ -37,7 +37,8 @@ SmartRefreshHorizontal 作为 SmartRefreshLayout 的扩展库，实现了横向�
 
 ### 1. 在 build.gradle 中添加依赖
 ```gradle
-    implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:0.0.1'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:1.0.0-beta-1'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-beta-1'
 ```
 
 ### 2. 在XML布局文件中添加 SmartRefreshHorizontal
@@ -61,13 +62,12 @@ SmartRefreshHorizontal 作为 SmartRefreshLayout 的扩展库，实现了横向�
    RefreshLayout refreshLayout = root.findViewById(R.id.refreshLayout);
    refreshLayout.setRefreshHeader(new MaterialHeader(root.getContext()));
    refreshLayout.setRefreshFooter(new RefreshFooterWrapper(new MaterialHeader(root.getContext())), -1, -2);
-
 ```
 
 
 ## 混淆
 
-SmartRefreshHorizontal 没有使用到：序列化、反序列化、JNI、反射，所以并不需要添加混淆过滤代码，并且已经混淆测试通过，如果你在项目的使用中混淆之后出现问题，请及时通知我。
+SmartRefreshHorizontal 不需要添加混淆过滤代码，并且已经混淆测试通过，如果你在项目的使用中混淆之后出现问题，请及时通知我。
 
 
 ## 其他作品

@@ -1,12 +1,11 @@
 apply plugin: 'com.android.library'
-//apply plugin: 'com.novoda.bintray-release'
-
+apply plugin: 'maven'
 
 android {
     compileSdkVersion 28
 
     defaultConfig {
-        minSdkVersion 12
+        minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -27,19 +26,22 @@ android {
 dependencies {
     compileOnly fileTree(dir: 'libs', include: ['*.jar'])
 
-    compileOnly 'com.android.support:appcompat-v7:28.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-bata-1'
+    compileOnly 'com.android.support:appcompat-v7:28.0.0'
+    compileOnly 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-beta-1'
 }
 
-//publish {
-//    userOrg = 'scwang90'
-//    groupId = 'com.scwang.smartrefresh'
-//    artifactId = 'SmartRefreshHorizontal'
-//    publishVersion = '0.0.1'
-//    desc = 'An intelligent refresh layout with horizontal'
-//    website = "https://github.com/scwang90/${rootProject.name}"
-//}
+group = SMART_GROUP
+version = SMART_VERSION
+description = 'An intelligent refresh layout with horizontal'
+
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url: uri('../repo'))
+        pom.artifactId = SMART_ARTIFACT
+    }
+}
+

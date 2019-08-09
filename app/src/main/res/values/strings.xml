@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">SmartRefreshHorizontal</string>
+    <string name="app_name">Horizontal</string>
+
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
@@ -23,6 +24,9 @@
     <string name="practice_pager_pager_title_1">Index 1</string>
     <string name="practice_pager_pager_title_2">Index 2</string>
     <string name="practice_pager_pager_title_3">Index 3</string>
+
+    <string name="example_basic_fragment_title">加载更多</string>
+    <string name="example_basic_fragment_description">左边刷新右边加载更多</string>
 
     <string name="footer_detail_horizontal_pulling">滑动查看图文详情</string>
     <string name="footer_detail_horizontal_release">释放查看图文详情</string>

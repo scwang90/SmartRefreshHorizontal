@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.3.31'
+    ext.kotlin_version = '1.3.41'
     repositories {
         google()
         jcenter()
@@ -32,69 +32,22 @@ if (new File(file).exists()) {
     Properties properties = new Properties()
     properties.load(new FileInputStream(file))
     if ('true' == properties['bintray.enable']) {
-
         subprojects {
-
             if (name == ("library")) {
-
-                apply plugin: 'maven'
-
-                group = SMART_GROUP
-                version = SMART_VERSION
-                description = 'An intelligent refresh layout with horizontal'
-
                 afterEvaluate {
-                    uploadArchives {
-                        repositories.mavenDeployer {
-                            repository(url: uri('repo'))
-                        }
+                    publish {
+                        groupId = group
+                        desc = description
+                        publishVersion = version
+                        artifactId = SMART_ARTIFACT
+                        userOrg = properties['bintray.user']
+                        bintrayKey = properties['bintray.key']
+                        bintrayUser = properties['bintray.user']
+                        dryRun = properties['bintray.dryRun']
+                        website = "https://github.com/scwang90/${rootProject.name}"
                     }
                 }
-
-//                apply plugin: 'maven'
-//                apply plugin: 'com.novoda.bintray-release'
-//
-//                group = SMART_GROUP
-//                version = SMART_VERSION
-//                description = 'An intelligent refresh layout with horizontal'
-//
-//                def artifact = name
-//
-//                println "${group}:${artifact}:${version}"
-//
-//                uploadArchives {
-//                    repositories.mavenDeployer {
-//                        repository(url: uri('../repo'))
-//                        pom.artifactId = artifact
-//                        pom.groupId = SMART_GROUP
-//                        pom.version = SMART_VERSION
-//                    }
-//                }
-//
-//                tasks.withType(Javadoc) {
-//                    options {
-//                        encoding "UTF-8"
-//                        charSet 'UTF-8'
-//                        links "http://docs.oracle.com/javase/7/docs/api"
-//                    }
-//                    options.addStringOption('Xdoclint:none', '-quiet')
-//                }
-//
-//                gradle.projectsEvaluated {
-//                    tasks.withType(JavaCompile) {
-//                        options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
-//                    }
-//                }
-//
-//                publish {
-//                    userOrg = 'scwang90'
-//                    groupId = group
-//                    artifactId = name
-//                    publishVersion = version
-//                    desc = description
-//                    website = "https://github.com/scwang90/${rootProject.name}"
-//                }
-
+                apply plugin: 'com.novoda.bintray-release'
             }
         }
 

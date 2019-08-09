@@ -7,12 +7,11 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.chad.library.adapter.base.BaseQuickAdapter
-import com.chad.library.adapter.base.BaseViewHolder
 import com.scwang.smartrefresh.horizontal.demo.R
 import com.scwang.smartrefresh.horizontal.demo.activity.FragmentActivity
 import com.scwang.smartrefresh.horizontal.demo.adapter.BaseRecyclerAdapter
 import com.scwang.smartrefresh.horizontal.demo.adapter.SmartViewHolder
+import com.scwang.smartrefresh.horizontal.demo.fragment.ExampleBasicFragment
 import com.scwang.smartrefresh.horizontal.demo.fragment.PracticeGoodsFragment
 import com.scwang.smartrefresh.horizontal.demo.fragment.PracticePagerFragment
 import kotlinx.android.synthetic.main.fragment_index_home.*
@@ -22,7 +21,8 @@ class IndexHomeFragment : Fragment() {
 
     enum class HomeItem(@StringRes val titleId: Int, @StringRes val descriptionId: Int, val fragment: KClass<out Fragment>) {
         Goods(R.string.practice_goods_fragment_title, R.string.practice_goods_fragment_description, PracticeGoodsFragment::class),
-        Pager(R.string.practice_pager_fragment_title,R.string.practice_pager_fragment_description,PracticePagerFragment::class)
+        Pager(R.string.practice_pager_fragment_title,R.string.practice_pager_fragment_description, PracticePagerFragment::class),
+        More(R.string.example_basic_fragment_title,R.string.example_basic_fragment_description, ExampleBasicFragment::class)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -43,38 +43,7 @@ class IndexHomeFragment : Fragment() {
                 FragmentActivity.start(activity, item.fragment.java)
             }
         }
-        recyclerView.adapter = adapter;
-
-//        val adapter = QuickAdapterAdapter(HomeItem.values())
-//        adapter.setOnItemChildClickListener { _, _, position ->
-//            adapter.getItem(position)?.also { item->
-//                FragmentActivity.start(activity, item.fragment.java)
-//            }
-//        }
-//        recyclerView.adapter = adapter
-//        recyclerView.addOnItemTouchListener(object : SimpleClickListener() {
-//            override fun onItemChildClick(adapter: BaseQuickAdapter<*, *>?, view: View?, position: Int) {
-//            }
-//            override fun onItemLongClick(adapter: BaseQuickAdapter<*, *>?, view: View?, position: Int) {
-//            }
-//            override fun onItemChildLongClick(adapter: BaseQuickAdapter<*, *>?, view: View?, position: Int) {
-//            }
-//            override fun onItemClick(a: BaseQuickAdapter<*, *>?, b: View?, position: Int) {
-//                adapter.getItem(position)?.also { item->
-//                    FragmentActivity.start(activity, item.fragment.java)
-//                }
-//            }
-//        })
-    }
-
-    inner class QuickAdapterAdapter(items: Array<HomeItem>) :
-        BaseQuickAdapter<HomeItem, BaseViewHolder>(simple_list_item_2, items.asList()) {
-
-        override fun convert(holder: BaseViewHolder, item: HomeItem) {
-            holder.setText(android.R.id.text1, item.titleId)
-            holder.setText(android.R.id.text2, item.descriptionId)
-        }
-
+        recyclerView.adapter = adapter
     }
 }
 

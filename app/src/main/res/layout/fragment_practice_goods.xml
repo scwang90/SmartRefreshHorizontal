@@ -47,17 +47,17 @@
                                            android:layout_height="match_parent"
                                            android:adjustViewBounds="true"
                                            android:contentDescription="@string/app_name"
-                                           android:src="@mipmap/image_goods_banner_1"/>
-                                <ImageView android:layout_width="match_parent"
-                                           android:layout_height="match_parent"
-                                           android:adjustViewBounds="true"
-                                           android:contentDescription="@string/app_name"
                                            android:src="@mipmap/image_goods_banner_2"/>
                                 <ImageView android:layout_width="match_parent"
                                            android:layout_height="match_parent"
                                            android:adjustViewBounds="true"
                                            android:contentDescription="@string/app_name"
                                            android:src="@mipmap/image_goods_banner_3"/>
+                                <ImageView android:layout_width="match_parent"
+                                           android:layout_height="match_parent"
+                                           android:adjustViewBounds="true"
+                                           android:contentDescription="@string/app_name"
+                                           android:src="@mipmap/image_goods_banner_1"/>
                             </com.scwang.smartrefresh.horizontal.demo.widget.SmartViewPager>
                             <com.scwang.smartrefresh.horizontal.demo.widget.DetailHorizontalFooter
                                     android:layout_width="match_parent"

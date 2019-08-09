@@ -14,6 +14,7 @@ import android.view.ViewGroup
 import com.scwang.smartrefresh.horizontal.demo.R
 import com.scwang.smartrefresh.horizontal.demo.util.StatusBarUtil
 import kotlinx.android.synthetic.main.fragment_practice_goods.*
+import kotlin.math.min
 
 /**
  * A simple [Fragment] subclass.
@@ -43,7 +44,7 @@ class PracticeGoodsFragment : Fragment() {
                 onScrollChange(if (position == 0) scrollView.scrollY else banner.height)
             }
         })
-        scrollView.setOnScrollChangeListener { sv: NestedScrollView?, a: Int, scrollY: Int, c: Int, oldScrollY: Int ->
+        scrollView.setOnScrollChangeListener { _: NestedScrollView?, _: Int, scrollY: Int, _: Int, oldScrollY: Int ->
             Log.d("NestedScrollView", String.format("scrollY=%d oldScrollY=%d ", scrollY, oldScrollY))
             onScrollChange(scrollY)
         }
@@ -59,26 +60,15 @@ class PracticeGoodsFragment : Fragment() {
             activity?.finish()
         }
 
-//        ImmersionBar.with(this).titleBarMarginTop()
-//        StatusBarUtil.setDarkMode(activity)
-//        StatusBarUtil.setColor(activity, 0,0)
-
-
         StatusBarUtil.immersive(activity)
         StatusBarUtil.setHeight(activity, toolbar)
         StatusBarUtil.setPaddingSmart(activity, toolbar_content)
         StatusBarUtil.setPaddingSmart(activity, pager1)
         StatusBarUtil.setPaddingSmart(activity, pager2)
-
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
     }
 
     private fun onScrollChange(scrollY: Int) {
-        val percent = Math.min(1f * scrollY / (banner.height+1), 1f)
+        val percent = min(1f * scrollY / (banner.height+1), 1f)
         tabLayout.alpha = percent
         tabBackground.alpha = percent
         Log.d("NestedScrollView", String.format("alpha=%f", percent))

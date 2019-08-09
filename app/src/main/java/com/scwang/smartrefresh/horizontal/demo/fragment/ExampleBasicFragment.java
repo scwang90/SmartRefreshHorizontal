@@ -27,7 +27,7 @@ import static android.R.layout.simple_list_item_2;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HorizontalExampleFragment extends Fragment {
+public class ExampleBasicFragment extends Fragment {
 
     private QuickAdapterAdapter mQuickAdapter;
     private BaseRecyclerAdapter<Void> mAdapter;
@@ -95,7 +95,7 @@ public class HorizontalExampleFragment extends Fragment {
                         mQuickAdapter.replaceData(initData());
                         refreshLayout.finishRefresh();
                     }
-                }, 2000);
+                }, 1500);
             }
 
             @Override
@@ -109,7 +109,7 @@ public class HorizontalExampleFragment extends Fragment {
                         mQuickAdapter.addData(initData());
                         refreshLayout.finishLoadMore();
                     }
-                }, 2000);
+                }, 1500);
             }
         });
     }

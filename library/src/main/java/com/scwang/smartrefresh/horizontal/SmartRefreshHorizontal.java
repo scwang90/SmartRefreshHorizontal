@@ -1,5 +1,6 @@
 package com.scwang.smartrefresh.horizontal;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -30,7 +31,6 @@ public class SmartRefreshHorizontal extends ViewGroup implements RefreshLayout {
 
     public SmartRefreshHorizontal(Context context, AttributeSet attrs) {
         super(context, attrs);
-
         DefaultRefreshInitializer old = SmartRefreshImpl.getRefreshInitializer();
         SmartRefreshImpl.setRefreshInitializer(new DefaultHorizontalInitializer(sRefreshInitializer));
         mRefreshLayout = new SmartRefreshImpl(context, attrs);
@@ -110,6 +110,7 @@ public class SmartRefreshHorizontal extends ViewGroup implements RefreshLayout {
         mRefreshLayout.measure(heightMeasureSpec, widthMeasureSpec);
     }
 
+    @SuppressLint("ViewTag")
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         int width = right - left;
@@ -125,6 +126,7 @@ public class SmartRefreshHorizontal extends ViewGroup implements RefreshLayout {
             View child = mRefreshLayout.getChildAt(i);
             if ((header == null || child != header.getView()) && (footer == null || child != footer.getView())) {
                 if (child.getVisibility() != GONE) {
+//                    child.setTag(R.string.srl_tag, "GONE");
                     child.setTag(R.string.srl_component_falsify, child);
                     child.setRotation(90);
                     child.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY));
@@ -487,7 +489,7 @@ public class SmartRefreshHorizontal extends ViewGroup implements RefreshLayout {
     static class DefaultHorizontalInitializer implements DefaultRefreshInitializer {
         DefaultRefreshInitializer initializer;
 
-        public DefaultHorizontalInitializer(DefaultRefreshInitializer initializer) {
+        DefaultHorizontalInitializer(DefaultRefreshInitializer initializer) {
             this.initializer = initializer;
         }
 

@@ -23,7 +23,7 @@ public class ScrollBoundaryHorizontal {
      * @return 是否可以刷新
      */
     public static boolean canRefresh(@NonNull View targetView, PointF touch) {
-        if (canScrollLeft(targetView) && targetView.getVisibility() == View.VISIBLE) {
+        if (targetView.canScrollHorizontally(-1) && targetView.getVisibility() == View.VISIBLE) {
             return false;
         }
         //touch == null 时 canRefresh 不会动态递归搜索
@@ -37,6 +37,10 @@ public class ScrollBoundaryHorizontal {
                     if ("fixed".equals(child.getTag())) {
                         return false;
                     }
+//                    Object tag = child.getTag(R.id.srl_tag);
+//                    if ("fixed".equals(tag) || "fixed-bottom".equals(tag)) {
+//                        return false;
+//                    }
                     touch.offset(point.x, point.y);
                     boolean can = canRefresh(child, touch);
                     touch.offset(-point.x, -point.y);
@@ -55,7 +59,7 @@ public class ScrollBoundaryHorizontal {
      * @return 是否可以刷新
      */
     public static boolean canLoadMore(@NonNull View targetView, PointF touch, boolean contentFull) {
-        if (canScrollRight(targetView) && targetView.getVisibility() == View.VISIBLE) {
+        if (targetView.canScrollHorizontally(1) && targetView.getVisibility() == View.VISIBLE) {
             return false;
         }
         //touch == null 时 canLoadMore 不会动态递归搜索
@@ -69,6 +73,10 @@ public class ScrollBoundaryHorizontal {
                     if ("fixed".equals(child.getTag())) {
                         return false;
                     }
+//                    Object tag = child.getTag(R.id.srl_tag);
+//                    if ("fixed".equals(tag) || "fixed-top".equals(tag)) {
+//                        return false;
+//                    }
                     touch.offset(point.x, point.y);
                     boolean can = canLoadMore(child, touch, contentFull);
                     touch.offset(-point.x, -point.y);
@@ -76,39 +84,7 @@ public class ScrollBoundaryHorizontal {
                 }
             }
         }
-        return (contentFull || canScrollLeft(targetView));
-    }
-
-    public static boolean canScrollLeft(@NonNull View targetView) {
-        if (android.os.Build.VERSION.SDK_INT < 14) {
-            if (targetView instanceof AbsListView) {
-                final ViewGroup viewGroup = (ViewGroup) targetView;
-                final AbsListView absListView = (AbsListView) targetView;
-                return viewGroup.getChildCount() > 0
-                        && (absListView.getFirstVisiblePosition() > 0
-                        || viewGroup.getChildAt(0).getTop() < targetView.getPaddingTop());
-            } else {
-                return targetView.getScrollY() > 0;
-            }
-        } else {
-            return targetView.canScrollHorizontally(-1);
-        }
-    }
-
-    public static boolean canScrollRight(@NonNull View targetView) {
-        if (android.os.Build.VERSION.SDK_INT < 14) {
-            if (targetView instanceof AbsListView) {
-                final ViewGroup viewGroup = (ViewGroup) targetView;
-                final AbsListView absListView = (AbsListView) targetView;
-                final int childCount = viewGroup.getChildCount();
-                return childCount > 0 && (absListView.getLastVisiblePosition() < childCount - 1
-                        || viewGroup.getChildAt(childCount - 1).getBottom() > targetView.getPaddingBottom());
-            } else {
-                return targetView.getScrollY() < 0;
-            }
-        } else {
-            return targetView.canScrollHorizontally(1);
-        }
+        return (contentFull || targetView.canScrollHorizontally(-1));
     }
 
     //</editor-fold>

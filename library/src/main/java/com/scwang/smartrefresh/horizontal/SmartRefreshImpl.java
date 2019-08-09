@@ -26,7 +26,10 @@ public class SmartRefreshImpl extends SmartRefreshLayout {
         }
     }
 
-
+    @Override
+    public void onFinishInflate() {
+        super.onFinishInflate();
+    }
 
     static DefaultRefreshInitializer getRefreshInitializer() {
         return SmartRefreshImpl.sRefreshInitializer;
