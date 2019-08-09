@@ -12,7 +12,6 @@ SmartRefreshHorizontal 作为 SmartRefreshLayout 的扩展库，实现了横向�
 而是对 SmartRefreshLayout 做了封装和转换，使其支持横向刷新。
 所以 SmartRefreshHorizontal 继承了 SmartRefreshLayout 所有的特性，只是方向改成了横向。
 
-
 ## 特点功能:
 
  - 支持 横向滚动
@@ -33,12 +32,21 @@ SmartRefreshHorizontal 作为 SmartRefreshLayout 的扩展库，实现了横向�
 
 ![](https://github.com/scwang90/SmartRefreshHorizontal/raw/master/art/png_apk_rqcode.png)
 
+#### 效果演示
+|商品详情|ViewPager|
+|:---:|:---:|
+|![](https://github.com/scwang90/SmartRefreshHorizontal/raw/master/art/gif_goods.gif)|![](https://github.com/scwang90/SmartRefreshHorizontal/raw/master/art/gif_pager.gif)|
+
+|数据演示|
+|:---:|
+|![](https://github.com/scwang90/SmartRefreshHorizontal/raw/master/art/gif_basic.gif)|
+
 ## 简单用例
 
 ### 1. 在 build.gradle 中添加依赖
 ```gradle
     implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:1.0.0-beta-1'
-    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-beta-1'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-beta-1'//必须依赖 版本 1.1.0-beta-1 以上
 ```
 
 ### 2. 在XML布局文件中添加 SmartRefreshHorizontal
@@ -64,14 +72,13 @@ SmartRefreshHorizontal 作为 SmartRefreshLayout 的扩展库，实现了横向�
    refreshLayout.setRefreshFooter(new RefreshFooterWrapper(new MaterialHeader(root.getContext())), -1, -2);
 ```
 
-
 ## 混淆
 
 SmartRefreshHorizontal 不需要添加混淆过滤代码，并且已经混淆测试通过，如果你在项目的使用中混淆之后出现问题，请及时通知我。
 
-
 ## 其他作品
 [MultiWaveHeader](https://github.com/scwang90/MultiWaveHeader)  
+[SmartRefreshLayout](https://github.com/scwang90/SmartRefreshLayout)  
 [诗和远方](http://android.myapp.com/myapp/detail.htm?apkName=com.poetry.kernel)
 
 License
