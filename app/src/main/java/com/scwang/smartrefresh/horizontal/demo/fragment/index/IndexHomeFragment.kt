@@ -2,8 +2,8 @@ package com.scwang.smartrefresh.horizontal.demo.fragment.index
 
 import android.R.layout.simple_list_item_2
 import android.os.Bundle
-import android.support.annotation.StringRes
-import android.support.v4.app.Fragment
+import androidx.annotation.StringRes
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,9 +17,9 @@ import com.scwang.smartrefresh.horizontal.demo.fragment.PracticePagerFragment
 import kotlinx.android.synthetic.main.fragment_index_home.*
 import kotlin.reflect.KClass
 
-class IndexHomeFragment : Fragment() {
+class IndexHomeFragment : androidx.fragment.app.Fragment() {
 
-    enum class HomeItem(@StringRes val titleId: Int, @StringRes val descriptionId: Int, val fragment: KClass<out Fragment>) {
+    enum class HomeItem(@StringRes val titleId: Int, @StringRes val descriptionId: Int, val fragment: KClass<out androidx.fragment.app.Fragment>) {
         Goods(R.string.practice_goods_fragment_title, R.string.practice_goods_fragment_description, PracticeGoodsFragment::class),
         Pager(R.string.practice_pager_fragment_title,R.string.practice_pager_fragment_description, PracticePagerFragment::class),
         More(R.string.example_basic_fragment_title,R.string.example_basic_fragment_description, ExampleBasicFragment::class)

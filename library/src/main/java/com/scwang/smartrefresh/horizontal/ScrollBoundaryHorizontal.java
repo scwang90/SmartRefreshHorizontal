@@ -1,10 +1,9 @@
 package com.scwang.smartrefresh.horizontal;
 
 import android.graphics.PointF;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
 import com.scwang.smartrefresh.layout.util.SmartUtil;
 
 /**

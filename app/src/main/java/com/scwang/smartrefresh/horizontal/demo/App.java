@@ -2,7 +2,7 @@ package com.scwang.smartrefresh.horizontal.demo;
 
 import android.app.Application;
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import com.scwang.smartrefresh.header.MaterialHeader;
 import com.scwang.smartrefresh.horizontal.SmartRefreshHorizontal;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;

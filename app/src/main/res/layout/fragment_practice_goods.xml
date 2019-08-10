@@ -25,11 +25,11 @@
                 <com.scwang.smartrefresh.header.MaterialHeader
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
-                <android.support.v4.widget.NestedScrollView
+                <androidx.core.widget.NestedScrollView
                         android:id="@+id/scrollView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
-                    <android.support.constraint.ConstraintLayout
+                    <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
@@ -69,8 +69,8 @@
                                    android:adjustViewBounds="true"
                                    android:contentDescription="@string/app_name"
                                    android:src="@mipmap/image_detail_goods_mi"/>
-                    </android.support.constraint.ConstraintLayout>
-                </android.support.v4.widget.NestedScrollView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.core.widget.NestedScrollView>
                 <com.scwang.smartrefresh.layout.footer.FalsifyFooter
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>

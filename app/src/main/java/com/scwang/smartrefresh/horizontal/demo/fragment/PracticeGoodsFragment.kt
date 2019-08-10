@@ -3,10 +3,10 @@ package com.scwang.smartrefresh.horizontal.demo.fragment
 
 import android.os.Build
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.graphics.ColorUtils
-import android.support.v4.view.ViewPager
-import android.support.v4.widget.NestedScrollView
+import androidx.fragment.app.Fragment
+import androidx.core.graphics.ColorUtils
+import androidx.viewpager.widget.ViewPager
+import androidx.core.widget.NestedScrollView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -20,7 +20,7 @@ import kotlin.math.min
  * A simple [Fragment] subclass.
  *
  */
-class PracticeGoodsFragment : Fragment() {
+class PracticeGoodsFragment : androidx.fragment.app.Fragment() {
 
     var pageIndex = 0
     var darkMode = false
@@ -38,7 +38,7 @@ class PracticeGoodsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         onScrollChange(0)
         tabLayout.setViewPager(viewPager)
-        viewPager.addOnPageChangeListener(object : ViewPager.SimpleOnPageChangeListener() {
+        viewPager.addOnPageChangeListener(object : androidx.viewpager.widget.ViewPager.SimpleOnPageChangeListener() {
             override fun onPageSelected(position: Int) {
                 pageIndex = position
                 onScrollChange(if (position == 0) scrollView.scrollY else banner.height)

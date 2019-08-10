@@ -1,7 +1,7 @@
 package com.scwang.smartrefresh.horizontal;
 
 import android.animation.ValueAnimator;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.View;
 import android.widget.AbsListView;
 import com.scwang.smartrefresh.layout.impl.RefreshContentWrapper;

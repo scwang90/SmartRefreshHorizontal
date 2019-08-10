@@ -6,10 +6,10 @@
     android:orientation="vertical"
     tools:context=".fragment.ExampleBasicFragment">
 
-    <android.support.v7.widget.Toolbar style="@style/AppTheme.Toolbar"
-        android:id="@+id/toolbar"
-        app:navigationIcon="?attr/homeAsUpIndicator"
-        app:title="水平滚动"/>
+    <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar"
+                                       android:id="@+id/toolbar"
+                                       app:navigationIcon="?attr/homeAsUpIndicator"
+                                       app:title="水平滚动"/>
 
     <com.scwang.smartrefresh.horizontal.SmartRefreshHorizontal
         android:id="@+id/refreshLayout"
@@ -17,14 +17,14 @@
         android:layout_height="match_parent"
         app:srlEnableHeaderTranslationContent="true"
         app:srlEnableFooterTranslationContent="true">
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@android:color/white"
             android:overScrollMode="never"
             android:orientation="horizontal"
-            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@android:layout/simple_list_item_2"/>
         <com.scwang.smartrefresh.header.MaterialHeader
             android:layout_width="match_parent"
