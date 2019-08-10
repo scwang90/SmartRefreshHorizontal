@@ -47,6 +47,10 @@ SmartRefreshHorizontal 作为 SmartRefreshLayout 的扩展库，实现了横向�
 ```gradle
     implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:1.0.0-beta-1'
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-beta-1'//必须依赖 版本 1.1.0-beta-1 以上
+
+    //androidx
+    implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:1.0.0-andx-1'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-andx-16'//必须依赖 版本 1.1.0-andx-16 以上
 ```
 
 ### 2. 在XML布局文件中添加 SmartRefreshHorizontal
