@@ -36,7 +36,7 @@ SmartRefreshLayout 的设计灵活多样，扩展性高，我想这应该是它�
 之前设计的十多个 Header 和 Footer 也可以不用任何修改直接使用！这让我产生了开发横向刷新库的动力。
 于是基于这个试验想法就诞生了这个 SmartRefreshHorizontal 库 ！
 
-明白了 SmartRefreshHorizontal 与 SmartRefreshLayout 的关系，那么大家在使用本科的使用同时也要依赖
+明白了 SmartRefreshHorizontal 与 SmartRefreshLayout 的关系，那么大家在使用本库的使用同时也要依赖
 SmartRefreshLayout，并且版本要大于 1.1.0-beta-1 ，否则会出现找不到类的错误。
 
 ## 传送门
@@ -44,7 +44,7 @@ SmartRefreshLayout，并且版本要大于 1.1.0-beta-1 ，否则会出现找不
  - [属性文档](https://github.com/scwang90/SmartRefreshLayout/blob/master/art/md_property.md)
  - [常见问题](https://github.com/scwang90/SmartRefreshLayout/blob/master/art/md_faq.md)
  - [更新日志](https://github.com/scwang90/SmartRefreshHorizontal/blob/master/art/md_update.md)
- - [博客文章(尽请期待)](#)
+ - [博客文章](https://segmentfault.com/a/1190000020038792)
  - [源码下载](https://github.com/scwang90/SmartRefreshHorizontal/releases)
  - [自定义Header](https://github.com/scwang90/SmartRefreshLayout/blob/master/art/md_custom.md)
 
