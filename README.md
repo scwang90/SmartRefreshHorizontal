@@ -7,23 +7,46 @@
 
 ## [English](https://github.com/scwang90/SmartRefreshHorizontal/blob/master/README_EN.md) | 中文
 
-SmartRefreshHorizontal 作为 SmartRefreshLayout 的扩展库，实现了横向刷新和加载的功能。
-虽然作为一个独立的开源库，但是并没有重复做实现，
+SmartRefreshHorizontal 作为 SmartRefreshLayout 的扩展库，实现了横向刷新和加载的功能，
+虽然是独立的开源库，但是并没有重复做实现，
 而是对 SmartRefreshLayout 做了封装和转换，使其支持横向刷新。
 所以 SmartRefreshHorizontal 继承了 SmartRefreshLayout 所有的特性，只是方向改成了横向。
 
-## 特点功能:
+## 特点:
 
  - 支持 横向滚动
  - 支持 [SmartRefreshLayout](https://github.com/scwang90/SmartRefreshLayout) 的所有特性
  - 支持 AndroidX
+
+## 由来
+
+SmartRefreshLayout 的设计灵活多样，扩展性高，我想这应该是它受欢迎的原因之一。
+在 issue 区有不少人建议让 SmartRefreshLayout 支持横向刷新。
+其实大家都知道横向刷新的库已经有了不少，我给他们的回复是使用其他现有的横向刷新库。
+但这在 issue 引发热议，可能是那些横向刷新库的使用、功能、扩展与 SmartRefreshLayout有很大差距。
+所以我自己认为要做横向刷新库也需要能够像 SmartRefreshLayout 一样的多功能与易扩展。
+如果直接扩展 SmartRefreshLayout 的功能使其直接支持横向，将会增加代码量。
+然而当此时它已经足够庞大，并且也有不少人抱怨它太大需要分包细化功能。所以一开始的时候我几乎没有开发横向刷新功能的想法。
+因为用到横向刷新的应用场景比竖向刷新少很多，我自己也很少会用到这样的场景。
+如果为了实现一个我自己不常用的功能库要花费我太多时间和精力实在划不来，仅仅实现一个简单的横向刷新又没有必要...
+
+## 原理
+
+终于！有一天我在开发旋转动画过程中，产生了一个奇妙的想法：如果把 SmartRefreshLayout 旋转90度会怎样？
+然后开始做试验：把 SmartRefreshLayout 旋转90度，再把 Content 旋转-90度。结果竟然真的可以用！！
+这样就不用让我花大量时间精力去做横向刷新代码实现，SmartRefreshLayout 原有的所有功能多可以直接使用，
+之前设计的十多个 Header 和 Footer 也可以不用任何修改直接使用！这让我产生了开发横向刷新库的动力。
+于是基于这个试验想法就诞生了这个 SmartRefreshHorizontal 库 ！
+
+明白了 SmartRefreshHorizontal 与 SmartRefreshLayout 的关系，那么大家在使用本库的使用同时也要依赖
+SmartRefreshLayout，并且版本要大于 1.1.0-beta-1 ，否则会出现找不到类的错误。
 
 ## 传送门
 
  - [属性文档](https://github.com/scwang90/SmartRefreshLayout/blob/master/art/md_property.md)
  - [常见问题](https://github.com/scwang90/SmartRefreshLayout/blob/master/art/md_faq.md)
  - [更新日志](https://github.com/scwang90/SmartRefreshHorizontal/blob/master/art/md_update.md)
- - [博客文章(尽请期待)](#)
+ - [博客文章](https://segmentfault.com/a/1190000020038792)
  - [源码下载](https://github.com/scwang90/SmartRefreshHorizontal/releases)
  - [自定义Header](https://github.com/scwang90/SmartRefreshLayout/blob/master/art/md_custom.md)
 
@@ -46,7 +69,11 @@ SmartRefreshHorizontal 作为 SmartRefreshLayout 的扩展库，实现了横向�
 ### 1. 在 build.gradle 中添加依赖
 ```gradle
     implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:1.0.0-beta-1'
-    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-beta-1'//必须依赖 版本 1.1.0-beta-1 以上
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'//必须依赖 版本 1.1.0 以上
+
+    //androidx
+    implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:1.0.0-andx-1'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-andx-16'//必须依赖 版本 1.1.0-andx-16 以上
 ```
 
 ### 2. 在XML布局文件中添加 SmartRefreshHorizontal

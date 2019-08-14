@@ -35,6 +35,7 @@ class PracticePagerFragment : Fragment() {
             activity?.finish()
         }
 
+        refreshLayout.setEnableOverScrollBounce(false)
         refreshLayout.setOnMultiPurposeListener(object : SimpleMultiPurposeListener() {
             override fun onHeaderStartAnimator(h: RefreshHeader?, footerHeight: Int, maxDragHeight: Int) {
                 (header.drawable as? Animatable)?.start()
