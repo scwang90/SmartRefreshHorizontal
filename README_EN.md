@@ -47,6 +47,10 @@ So SmartRefreshHorizontal inherits all the features of SmartRefreshLayout, but t
     implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:1.0.0-beta-1'
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-beta-1'//must
 
+    //androidx
+    implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:1.0.0-andx-1'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-andx-16'//must
+
 ```
 
 #### 2.Add SmartRefreshLayout in the layout xml.
