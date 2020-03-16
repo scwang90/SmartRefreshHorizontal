@@ -18,11 +18,11 @@
                 app:title="@string/practice_pager_fragment_title"/>
     </android.support.design.widget.AppBarLayout>
 
-
     <com.scwang.smartrefresh.horizontal.SmartRefreshHorizontal
             android:id="@+id/refreshLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            app:srlEnableOverScrollBounce="false">
         <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
