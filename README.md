@@ -71,7 +71,7 @@ SmartRefreshLayout，并且版本要大于 1.1.0-beta-1 ，否则会出现找不
 
     //androidx
     implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:1.1.1-andx'
-    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.1-andx'//必须依赖 版本 1.1.0-andx-16 以上
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.1-andx'//必须依赖 版本 1.1.0-x 以上
 ```
 
 ### 2. 在XML布局文件中添加 SmartRefreshHorizontal
