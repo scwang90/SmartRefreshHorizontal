@@ -153,6 +153,20 @@ public class SmartRefreshHorizontal extends SmartRefreshLayout {
     }
     //</editor-fold>
 
+//    //<editor-fold desc="问题修复">
+//
+//    /**
+//     * 问题修复
+//     * https://github.com/scwang90/SmartRefreshHorizontal/issues/9
+//     * @param visibility 显示状态
+//     */
+//    @Override
+//    public void setVisibility(int visibility) {
+//        mRefreshLayout.setVisibility(visibility);
+//        super.setVisibility(visibility);
+//    }
+//    //</editor-fold>
+
     @SuppressWarnings("WeakerAccess")
     protected static class DefaultHorizontalInitializer implements DefaultRefreshInitializer {
         protected DefaultRefreshInitializer initializer;
