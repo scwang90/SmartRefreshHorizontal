@@ -17,7 +17,6 @@ public class App extends Application {
                 layout.setPrimaryColorsId(R.color.colorPrimary, android.R.color.white);
             }
         });
-
         SmartRefreshHorizontal.setDefaultRefreshInitializer(new DefaultRefreshInitializer() {
             @Override
             public void initialize(@NonNull Context context, @NonNull RefreshLayout layout) {

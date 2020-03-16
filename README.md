@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/License%20-Apache%202-337ab7.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![MinSdk](https://img.shields.io/badge/%20MinSdk%20-%2012%2B%20-f0ad4e.svg)](https://android-arsenal.com/api?level=12)
-[![JCenter](https://img.shields.io/badge/%20JCenter%20-0.0.1-5bc0de.svg)](https://bintray.com/scwang90/maven/SmartRefreshHorizontal/_latestVersion)
+[![JCenter](https://img.shields.io/badge/%20JCenter%20-1.1.1-5bc0de.svg)](https://bintray.com/scwang90/maven/SmartRefreshHorizontal/_latestVersion)
 [![Author](https://img.shields.io/badge/Author-scwang90-11bbff.svg)](https://github.com/scwang90)
 
 ## [English](https://github.com/scwang90/SmartRefreshHorizontal/blob/master/README_EN.md) | 中文
@@ -66,12 +66,12 @@ SmartRefreshLayout，并且版本要大于 1.1.0-beta-1 ，否则会出现找不
 
 ### 1. 在 build.gradle 中添加依赖
 ```gradle
-    implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:1.0.0-beta-1'
-    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-beta-1'//必须依赖 版本 1.1.0-beta-1 以上
+    implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:1.1.1'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.1'//必须依赖 版本 1.1.0-beta-1 以上
 
     //androidx
-    implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:1.0.0-andx-1'
-    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-andx-16'//必须依赖 版本 1.1.0-andx-16 以上
+    implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:1.1.1-andx'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.1-andx'//必须依赖 版本 1.1.0-andx-16 以上
 ```
 
 ### 2. 在XML布局文件中添加 SmartRefreshHorizontal
