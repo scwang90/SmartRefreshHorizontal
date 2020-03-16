@@ -49,6 +49,7 @@ class PracticeGoodsFragment : androidx.fragment.app.Fragment() {
             onScrollChange(scrollY)
         }
 
+        refreshHorizontal.setEnableOverScrollBounce(false)
         refreshHorizontal.setOnLoadMoreListener {
             viewPager.currentItem = 1
         }

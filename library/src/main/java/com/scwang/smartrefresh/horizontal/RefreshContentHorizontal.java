@@ -17,7 +17,7 @@ public class RefreshContentHorizontal extends RefreshContentWrapper {
     @Override
     public ValueAnimator.AnimatorUpdateListener scrollContentWhenFinished(final int spinner) {
         if (mScrollableView != null && spinner != 0) {
-            if ((spinner < 0 && mScrollableView.canScrollHorizontally(1)) || (spinner > 0 && mScrollableView.canScrollHorizontally(-1))) {
+            if ((spinner < 0 && ScrollBoundaryHorizontal.canScrollRight(mScrollableView)) || (spinner > 0 && ScrollBoundaryHorizontal.canScrollLeft(mScrollableView))) {
                 mLastSpinner = spinner;
                 return this;
             }
