@@ -1,9 +1,13 @@
 package com.scwang.smartrefresh.horizontal;
 
 import android.graphics.PointF;
-import androidx.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
+
+import androidx.annotation.NonNull;
+
+import com.scwang.smartrefresh.layout.impl.ScrollBoundaryDeciderAdapter;
 import com.scwang.smartrefresh.layout.util.SmartUtil;
 
 /**

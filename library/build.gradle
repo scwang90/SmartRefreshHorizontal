@@ -28,7 +28,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     compileOnly 'androidx.appcompat:appcompat:1.0.2'
-    compileOnly 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-beta-1'
+    compileOnly 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.1'
 }
 
 group = SMART_GROUP
