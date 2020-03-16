@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/License%20-Apache%202-337ab7.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![MinSdk](https://img.shields.io/badge/%20MinSdk%20-%2012%2B%20-f0ad4e.svg)](https://android-arsenal.com/api?level=12)
-[![JCenter](https://img.shields.io/badge/%20JCenter%20-0.0.1-5bc0de.svg)](https://bintray.com/scwang90/maven/SmartRefreshHorizontal/_latestVersion)
+[![JCenter](https://img.shields.io/badge/%20JCenter%20-1.1.1-5bc0de.svg)](https://bintray.com/scwang90/maven/SmartRefreshHorizontal/_latestVersion)
 [![Author](https://img.shields.io/badge/Author-scwang90-11bbff.svg)](https://github.com/scwang90)
 
 ## English | [中文](README.md)
@@ -44,12 +44,12 @@ So SmartRefreshHorizontal inherits all the features of SmartRefreshLayout, but t
 ## Usage
 #### 1.Add a gradle dependency.
 ```
-    implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:1.0.0-beta-1'
-    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-beta-1'//must
+    implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:1.1.1'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.1'//must
 
     //androidx
-    implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:1.0.0-andx-1'
-    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-andx-16'//must
+    implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:1.1.1-andx'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.1-andx'//must
 
 ```
 
