@@ -7,10 +7,10 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.scwang.smart.refresh.layout.api.RefreshHeader
+import com.scwang.smart.refresh.layout.simple.SimpleMultiListener
 
 import com.scwang.smartrefresh.horizontal.demo.R
-import com.scwang.smartrefresh.layout.api.RefreshHeader
-import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener
 import kotlinx.android.synthetic.main.fragment_practice_pager.*
 import kotlinx.android.synthetic.main.fragment_practice_pager.refreshLayout
 
@@ -36,15 +36,14 @@ class PracticePagerFragment : Fragment() {
         }
 
         refreshLayout.setEnableOverScrollBounce(false)
-        refreshLayout.setOnMultiPurposeListener(object : SimpleMultiPurposeListener() {
+        refreshLayout.setOnMultiListener(object : SimpleMultiListener() {
             override fun onHeaderStartAnimator(h: RefreshHeader?, footerHeight: Int, maxDragHeight: Int) {
                 (header.drawable as? Animatable)?.start()
             }
-
             override fun onHeaderFinish(h: RefreshHeader?, success: Boolean) {
                 (header.drawable as? Animatable)?.stop()
             }
-        })
+        });
 
         refreshLayout.setOnRefreshListener {
             refreshLayout.finishRefresh(1500)

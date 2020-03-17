@@ -5,15 +5,16 @@ import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
-import com.scwang.smartrefresh.layout.impl.ScrollBoundaryDeciderAdapter;
-import com.scwang.smartrefresh.layout.util.SmartUtil;
+
+import com.scwang.smart.refresh.layout.simple.SimpleBoundaryDecider;
+import com.scwang.smart.refresh.layout.util.SmartUtil;
 
 /**
  * 滚动边界
  * Created by SCWANG on 2017/7/8.
  */
 @SuppressWarnings("WeakerAccess")
-public class ScrollBoundaryHorizontal extends ScrollBoundaryDeciderAdapter {
+public class ScrollBoundaryHorizontal extends SimpleBoundaryDecider {
 
     //<editor-fold desc="刷新判断">
     @Override

@@ -17,12 +17,12 @@
                 android:id="@+id/viewPager"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            <com.scwang.smart.refresh.layout.SmartRefreshLayout
                     android:id="@+id/refreshLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:layout_svpTitle="@string/practice_goods_rad_goods">
-                <com.scwang.smartrefresh.header.MaterialHeader
+                <com.scwang.smart.refresh.header.MaterialHeader
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
                 <android.support.v4.widget.NestedScrollView
@@ -72,10 +72,10 @@
                                    android:src="@mipmap/image_detail_goods_mi"/>
                     </android.support.constraint.ConstraintLayout>
                 </android.support.v4.widget.NestedScrollView>
-                <com.scwang.smartrefresh.layout.footer.FalsifyFooter
+                <com.scwang.smart.refresh.header.FalsifyFooter
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
-            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
             <ScrollView
                     android:id="@+id/pager1"
                     android:layout_width="match_parent"

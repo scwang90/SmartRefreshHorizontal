@@ -4,9 +4,10 @@ import android.animation.ValueAnimator;
 import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.AbsListView;
-import com.scwang.smartrefresh.layout.impl.RefreshContentWrapper;
 
-import static com.scwang.smartrefresh.layout.util.SmartUtil.scrollListBy;
+import com.scwang.smart.refresh.layout.wrapper.RefreshContentWrapper;
+
+import static com.scwang.smart.refresh.layout.util.SmartUtil.scrollListBy;
 
 public class RefreshContentHorizontal extends RefreshContentWrapper {
 

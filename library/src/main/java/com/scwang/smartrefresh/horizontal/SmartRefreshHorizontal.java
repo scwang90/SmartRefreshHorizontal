@@ -5,8 +5,13 @@ import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.scwang.smartrefresh.layout.api.*;
+
+import com.scwang.smart.refresh.layout.SmartRefreshLayout;
+import com.scwang.smart.refresh.layout.api.RefreshComponent;
+import com.scwang.smart.refresh.layout.api.RefreshLayout;
+import com.scwang.smart.refresh.layout.listener.DefaultRefreshFooterCreator;
+import com.scwang.smart.refresh.layout.listener.DefaultRefreshHeaderCreator;
+import com.scwang.smart.refresh.layout.listener.DefaultRefreshInitializer;
 
 @SuppressWarnings("unused")
 public class SmartRefreshHorizontal extends SmartRefreshLayout {
@@ -98,8 +103,8 @@ public class SmartRefreshHorizontal extends SmartRefreshLayout {
         int height = bottom - top;
         int div = (height - width) / 2;
         if (isInLayout) {
-            RefreshInternal header = mRefreshHeader;
-            RefreshInternal footer = mRefreshFooter;
+            RefreshComponent header = mRefreshHeader;
+            RefreshComponent footer = mRefreshFooter;
 
             final View thisView = this;
             int paddingLeft = thisView.getPaddingLeft();
