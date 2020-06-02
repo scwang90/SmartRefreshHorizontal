@@ -1,4 +1,4 @@
-package com.scwang.smartrefresh.horizontal.demo.widget;
+package com.scwang.smart.refresh.horizontal.demo.widget;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -49,13 +49,6 @@ public class DetailHorizontalFooter extends ConstraintLayout implements RefreshF
 
     @Override
     public void onReleased(@NonNull RefreshLayout layout, int height, int maxDragHeight) {
-        if (mRefreshKernel != null) {
-            mRefreshKernel.setState(RefreshState.None);
-            //onReleased 的时候 调用 setState(RefreshState.None); 并不会立刻改变成 None
-            //而是先执行一个回弹动画，LoadFinish 是介于 Refreshing 和 None 之间的状态
-            //LoadFinish 用于在回弹动画结束时候能顺利改变为 None
-            mRefreshKernel.setState(RefreshState.LoadFinish);
-        }
     }
 
     @Override
@@ -87,7 +80,13 @@ public class DetailHorizontalFooter extends ConstraintLayout implements RefreshF
 
     @Override
     public void onStartAnimator(@NonNull RefreshLayout refreshLayout, int height, int maxDragHeight) {
-
+        if (mRefreshKernel != null) {
+            mRefreshKernel.setState(RefreshState.None);
+            //onReleased 的时候 调用 setState(RefreshState.None); 并不会立刻改变成 None
+            //而是先执行一个回弹动画，LoadFinish 是介于 Refreshing 和 None 之间的状态
+            //LoadFinish 用于在回弹动画结束时候能顺利改变为 None
+            mRefreshKernel.setState(RefreshState.LoadFinish);
+        }
     }
 
     @Override

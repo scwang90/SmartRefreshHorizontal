@@ -31,7 +31,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     compileOnly 'com.android.support:appcompat-v7:28.0.0'
-    compileOnly 'com.scwang.smart:refresh-layout-kernel:2.0.0-alpha-1'
+    compileOnly 'com.scwang.smart:refresh-layout-kernel:2.0.1'
 }
 
 group = SMART_GROUP

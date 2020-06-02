@@ -1,4 +1,4 @@
-package com.scwang.smartrefresh.horizontal.demo.fragment
+package com.scwang.smart.refresh.horizontal.demo.fragment
 
 
 import android.os.Build
@@ -12,7 +12,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.scwang.smartrefresh.horizontal.demo.R
-import com.scwang.smartrefresh.horizontal.demo.util.StatusBarUtil
+import com.scwang.smart.refresh.horizontal.demo.util.StatusBarUtil
 import kotlinx.android.synthetic.main.fragment_practice_goods.*
 import kotlin.math.min
 

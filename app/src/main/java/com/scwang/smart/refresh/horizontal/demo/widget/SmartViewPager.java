@@ -1,4 +1,4 @@
-package com.scwang.smartrefresh.horizontal.demo.widget;
+package com.scwang.smart.refresh.horizontal.demo.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;

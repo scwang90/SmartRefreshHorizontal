@@ -1,4 +1,4 @@
-package com.scwang.smartrefresh.horizontal.demo.fragment
+package com.scwang.smart.refresh.horizontal.demo.fragment
 
 
 import android.graphics.drawable.Animatable

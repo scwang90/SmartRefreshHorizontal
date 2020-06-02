@@ -1,4 +1,4 @@
-package com.scwang.smartrefresh.horizontal.demo.util;
+package com.scwang.smart.refresh.horizontal.demo.util;
 
 import android.app.Activity;
 import android.content.Context;

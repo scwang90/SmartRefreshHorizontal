@@ -1,4 +1,4 @@
-package com.scwang.smartrefresh.horizontal.demo.adapter;
+package com.scwang.smart.refresh.horizontal.demo.adapter;
 
 import android.database.DataSetObservable;
 import android.database.DataSetObserver;

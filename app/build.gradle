@@ -56,10 +56,10 @@ dependencies {
 
 //    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
 //    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0'
-    implementation 'com.scwang.smart:refresh-layout-kernel:2.0.0-alpha-1'
-    implementation 'com.scwang.smart:refresh-header-classics:2.0.0-alpha-1'
-    implementation 'com.scwang.smart:refresh-header-material:2.0.0-alpha-1'    //谷歌刷新头
-    implementation 'com.scwang.smart:refresh-header-falsify:2.0.0-alpha-1'     //虚拟刷新头
+    implementation 'com.scwang.smart:refresh-layout-kernel:2.0.1'
+    implementation 'com.scwang.smart:refresh-header-classics:2.0.1'
+    implementation 'com.scwang.smart:refresh-header-material:2.0.1'    //谷歌刷新头
+    implementation 'com.scwang.smart:refresh-header-falsify:2.0.1'     //虚拟刷新头
 //    implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:0.0.1'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50'
 

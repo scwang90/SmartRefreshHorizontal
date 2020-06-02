@@ -1,13 +1,14 @@
-package com.scwang.smartrefresh.horizontal.demo
+package com.scwang.smart.refresh.horizontal.demo
 
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import com.scwang.smartrefresh.horizontal.demo.fragment.ExampleBasicFragment
-import com.scwang.smartrefresh.horizontal.demo.fragment.PracticeGoodsFragment
-import com.scwang.smartrefresh.horizontal.demo.fragment.index.IndexHomeFragment
+import com.scwang.smart.refresh.horizontal.demo.fragment.ExampleBasicFragment
+import com.scwang.smart.refresh.horizontal.demo.fragment.PracticeGoodsFragment
+import com.scwang.smart.refresh.horizontal.demo.fragment.index.IndexHomeFragment
+import com.scwang.smartrefresh.horizontal.demo.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -25,12 +26,18 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.navigation_dashboard -> {
                 message.setText(R.string.title_dashboard)
-                supportFragmentManager.beginTransaction().replace(R.id.fragment, PracticeGoodsFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(
+                    R.id.fragment,
+                    PracticeGoodsFragment()
+                ).commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
                 message.setText(R.string.title_notifications)
-                supportFragmentManager.beginTransaction().replace(R.id.fragment, ExampleBasicFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(
+                    R.id.fragment,
+                    ExampleBasicFragment()
+                ).commit()
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -44,6 +51,9 @@ class MainActivity : AppCompatActivity() {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         navigation.visibility = View.GONE
 
-        supportFragmentManager.beginTransaction().replace(R.id.fragment, IndexHomeFragment()).commit()
+        supportFragmentManager.beginTransaction().replace(
+            R.id.fragment,
+            IndexHomeFragment()
+        ).commit()
     }
 }

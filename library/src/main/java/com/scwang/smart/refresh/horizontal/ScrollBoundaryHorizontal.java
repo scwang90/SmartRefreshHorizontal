@@ -1,4 +1,4 @@
-package com.scwang.smartrefresh.horizontal;
+package com.scwang.smart.refresh.horizontal;
 
 import android.graphics.PointF;
 import android.support.annotation.NonNull;

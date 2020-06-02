@@ -1,4 +1,4 @@
-package com.scwang.smartrefresh.horizontal;
+package com.scwang.smart.refresh.horizontal;
 
 import android.animation.ValueAnimator;
 import android.support.annotation.NonNull;

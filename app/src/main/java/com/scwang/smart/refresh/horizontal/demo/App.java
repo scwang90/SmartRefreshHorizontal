@@ -1,4 +1,4 @@
-package com.scwang.smartrefresh.horizontal.demo;
+package com.scwang.smart.refresh.horizontal.demo;
 
 import android.app.Application;
 import android.content.Context;
@@ -13,7 +13,8 @@ import com.scwang.smart.refresh.layout.listener.DefaultRefreshFooterCreator;
 import com.scwang.smart.refresh.layout.listener.DefaultRefreshHeaderCreator;
 import com.scwang.smart.refresh.layout.listener.DefaultRefreshInitializer;
 import com.scwang.smart.refresh.layout.wrapper.RefreshFooterWrapper;
-import com.scwang.smartrefresh.horizontal.SmartRefreshHorizontal;
+import com.scwang.smart.refresh.horizontal.SmartRefreshHorizontal;
+import com.scwang.smartrefresh.horizontal.demo.R;
 
 public class App extends Application {
     static {

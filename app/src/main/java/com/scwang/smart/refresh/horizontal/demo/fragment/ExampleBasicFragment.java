@@ -1,4 +1,4 @@
-package com.scwang.smartrefresh.horizontal.demo.fragment;
+package com.scwang.smart.refresh.horizontal.demo.fragment;
 
 
 import android.os.Bundle;
@@ -15,9 +15,9 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.scwang.smart.refresh.header.ClassicsHeader;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
 import com.scwang.smart.refresh.layout.listener.OnRefreshLoadMoreListener;
+import com.scwang.smart.refresh.horizontal.demo.adapter.BaseRecyclerAdapter;
+import com.scwang.smart.refresh.horizontal.demo.adapter.SmartViewHolder;
 import com.scwang.smartrefresh.horizontal.demo.R;
-import com.scwang.smartrefresh.horizontal.demo.adapter.BaseRecyclerAdapter;
-import com.scwang.smartrefresh.horizontal.demo.adapter.SmartViewHolder;
 
 import java.util.Arrays;
 import java.util.Collection;
