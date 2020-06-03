@@ -12,8 +12,6 @@ import com.scwang.smart.refresh.layout.api.RefreshLayout;
 import com.scwang.smart.refresh.layout.listener.DefaultRefreshFooterCreator;
 import com.scwang.smart.refresh.layout.listener.DefaultRefreshHeaderCreator;
 import com.scwang.smart.refresh.layout.listener.DefaultRefreshInitializer;
-import com.scwang.smartrefresh.horizontal.R;
-
 @SuppressWarnings("unused")
 public class SmartRefreshHorizontal extends SmartRefreshLayout {
 
@@ -139,9 +137,8 @@ public class SmartRefreshHorizontal extends SmartRefreshLayout {
                         l += div;
                         t -= div;
 
-//                        child.setTag(R.string.srl_tag, "GONE");
                         child.setRotation(90);
-                        child.setTag(R.string.srl_component_falsify, child);
+                        child.setTag(R.id.srl_tag, "GONE");
                         child.measure(MeasureSpec.makeMeasureSpec(w, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(h, MeasureSpec.EXACTLY));
                         child.layout(l, t, l + w, t + h);
                     }

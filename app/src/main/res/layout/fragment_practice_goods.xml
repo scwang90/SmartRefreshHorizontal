@@ -62,7 +62,7 @@
                             </com.scwang.smart.refresh.horizontal.demo.widget.SmartViewPager>
                             <com.scwang.smart.refresh.horizontal.demo.widget.DetailHorizontalFooter
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"/>
+                                    android:layout_height="80dp"/>
                         </com.scwang.smart.refresh.horizontal.SmartRefreshHorizontal>
                         <ImageView android:layout_width="match_parent"
                                    android:layout_height="wrap_content"

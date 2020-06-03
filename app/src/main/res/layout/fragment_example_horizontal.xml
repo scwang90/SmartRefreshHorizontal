@@ -1,34 +1,43 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.scwang.smart.refresh.horizontal.demo.fragment.ExampleBasicFragment">
-
-    <android.support.v7.widget.Toolbar style="@style/AppTheme.Toolbar"
-        android:id="@+id/toolbar"
-        app:navigationIcon="?attr/homeAsUpIndicator"
-        app:title="水平滚动"/>
-
-    <com.scwang.smart.refresh.horizontal.SmartRefreshHorizontal
-        android:id="@+id/refreshLayout"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:srlEnableHeaderTranslationContent="true"
-        app:srlEnableFooterTranslationContent="true">
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView"
+        android:orientation="vertical"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        tools:context="com.scwang.smart.refresh.horizontal.demo.fragment.ExampleBasicFragment">
+
+    <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/AppTheme.Toolbar"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            app:title="水平滚动" />
+
+    <com.scwang.smart.refresh.horizontal.SmartRefreshHorizontal
+            android:id="@+id/refreshLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@android:color/white"
-            android:overScrollMode="never"
-            android:orientation="horizontal"
-            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
-            tools:listitem="@android:layout/simple_list_item_2"/>
-        <com.scwang.smartrefresh.header.MaterialHeader
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_margin="80dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            app:srlEnablePreviewInEditMode="true"
+            app:srlEnableFooterTranslationContent="true"
+            app:srlEnableHeaderTranslationContent="true">
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                android:alpha="0.5"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                tools:listitem="@android:layout/simple_list_item_2" />
+
+        <com.scwang.smart.refresh.header.MaterialHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
     </com.scwang.smart.refresh.horizontal.SmartRefreshHorizontal>
 
 </LinearLayout>

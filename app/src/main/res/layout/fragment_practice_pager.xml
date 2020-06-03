@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:srlEnableOverScrollBounce="false">
-        <FrameLayout
+        <com.scwang.smart.refresh.horizontal.HorizontalHeader
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             <ImageView
@@ -32,10 +32,10 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/dp_10"
                     android:layout_gravity="center"
-                    android:rotation="90"
+                    android:layout_centerInParent="true"
                     android:contentDescription="@string/app_name"
                     android:src="@drawable/loading_rabbit"/>
-        </FrameLayout>
+        </com.scwang.smart.refresh.horizontal.HorizontalHeader>
         <com.scwang.smart.refresh.horizontal.demo.widget.SmartViewPager
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
