@@ -1,36 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:parentTag="android.support.constraint.ConstraintLayout">
+        tools:parentTag="android.widget.RelativeLayout">
 
-    <ImageView
-            android:id="@+id/footer_icon"
+    <android.support.constraint.ConstraintLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:contentDescription="@string/app_name"
-            android:rotation="-90"
-            android:src="@drawable/ic_footer_detail_gray_24dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/footer_title"
-            app:layout_constraintHorizontal_bias="0.4"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            tools:parentTag="android.support.constraint.ConstraintLayout">
 
-    <TextView
-            android:id="@+id/footer_title"
-            android:layout_width="20dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/footer_detail_horizontal_pulling"
-            android:textColor="@color/colorTextContent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/footer_icon"
-            app:layout_constraintTop_toTopOf="parent" />
-</android.support.constraint.ConstraintLayout>
+        <ImageView
+                android:id="@+id/footer_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/app_name"
+                android:rotation="-90"
+                android:src="@drawable/ic_footer_detail_gray_24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/footer_title"
+                app:layout_constraintHorizontal_bias="0.4"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+                android:id="@+id/footer_title"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/footer_detail_horizontal_pulling"
+                android:textColor="@color/colorTextContent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/footer_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+</merge>

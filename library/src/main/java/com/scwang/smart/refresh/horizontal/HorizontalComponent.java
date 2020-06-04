@@ -1,7 +1,6 @@
 package com.scwang.smart.refresh.horizontal;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -11,12 +10,19 @@ import com.scwang.smart.refresh.layout.simple.SimpleComponent;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 由于 {@link SmartRefreshHorizontal} 是通过选装 90 度来达到横向效果的
+ * 之前所有 Header Footer 虽然可以直接使用，但是他们也都被旋转了 90 度
+ * 如果项自定义 不会被旋转的 Header 或者 Footer 可以继承 HorizontalComponent
+ * 也可以把 HorizontalComponent 套在 普通 Header 和 Footer 外面达到效果
+ */
 public abstract class HorizontalComponent extends SimpleComponent {
 
     private List<View> views = new ArrayList<>();
 
     protected HorizontalComponent(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        mWrappedView = this;
     }
 
     @Override
@@ -24,7 +30,6 @@ public abstract class HorizontalComponent extends SimpleComponent {
         super.onFinishInflate();
         for (int i = 0; i < getChildCount(); i++) {
             View child = getChildAt(i);
-            this.mWrappedView = child;
             if (child instanceof RefreshComponent) {
                 this.mWrappedInternal = (RefreshComponent)child;
             }
@@ -43,12 +48,6 @@ public abstract class HorizontalComponent extends SimpleComponent {
                 }
             }
         }
-    }
-
-    @NonNull
-    @Override
-    public View getView() {
-        return this;
     }
 
     @Override

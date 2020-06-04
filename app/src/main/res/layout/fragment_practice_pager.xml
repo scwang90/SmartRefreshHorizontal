@@ -5,6 +5,8 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
+        android:clipChildren="false"
+        android:clipToPadding="false"
               android:background="@color/colorPrimary"
               tools:context="com.scwang.smart.refresh.horizontal.demo.fragment.PracticePagerFragment">
 
@@ -22,10 +24,15 @@
             android:id="@+id/refreshLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:clipChildren="false"
+            android:clipToPadding="false"
             app:srlEnableOverScrollBounce="false">
         <com.scwang.smart.refresh.horizontal.HorizontalHeader
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false">
+            <!-- 使用 HorizontalHeader 套住可以保证里面的 View 不被 90度旋转 -->
             <ImageView
                     android:id="@+id/header"
                     android:layout_width="wrap_content"
@@ -38,7 +45,8 @@
         </com.scwang.smart.refresh.horizontal.HorizontalHeader>
         <com.scwang.smart.refresh.horizontal.demo.widget.SmartViewPager
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:alpha="0.5">
             <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">

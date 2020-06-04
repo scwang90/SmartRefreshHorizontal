@@ -11,7 +11,6 @@ import com.scwang.smart.refresh.horizontal.HorizontalFooter;
 import com.scwang.smart.refresh.layout.api.RefreshKernel;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
 import com.scwang.smart.refresh.layout.constant.RefreshState;
-import com.scwang.smart.refresh.layout.constant.SpinnerStyle;
 import com.scwang.smartrefresh.horizontal.demo.R;
 
 public class DetailHorizontalFooter extends HorizontalFooter {
@@ -24,6 +23,9 @@ public class DetailHorizontalFooter extends HorizontalFooter {
         this(context, null);
     }
 
+    /**
+     * 构造函数中 加载xml布局，并获取控件
+     */
     public DetailHorizontalFooter(Context context, AttributeSet attrs) {
         super(context, attrs);
         View.inflate(context, R.layout.widget_footer_detail_horizontal, this);
@@ -31,6 +33,9 @@ public class DetailHorizontalFooter extends HorizontalFooter {
         mTvTitle = findViewById(R.id.footer_title);
     }
 
+    /**
+     * 初始化中 保存 kernel 核心对象，并关闭自动加载功能
+     */
     @Override
     public void onInitialized(@NonNull RefreshKernel kernel, int height, int maxDragHeight) {
         super.onInitialized(kernel, height, maxDragHeight);
@@ -38,17 +43,10 @@ public class DetailHorizontalFooter extends HorizontalFooter {
         kernel.getRefreshLayout().setEnableAutoLoadMore(false);
     }
 
-    @Override
-    public boolean setNoMoreData(boolean noMoreData) {
-        return false;
-    }
-
-    @NonNull
-    @Override
-    public SpinnerStyle getSpinnerStyle() {
-        return SpinnerStyle.Translate;
-    }
-
+    /**
+     * 重写 onStartAnimator，在开始动画的时候，直接关闭刷新，
+     * 因为本Footer不需要任何加载，仅仅触发事件之后直接关闭
+     */
     @Override
     public void onStartAnimator(@NonNull RefreshLayout refreshLayout, int height, int maxDragHeight) {
         if (mRefreshKernel != null) {
@@ -60,11 +58,9 @@ public class DetailHorizontalFooter extends HorizontalFooter {
         }
     }
 
-    @Override
-    public int onFinish(@NonNull RefreshLayout refreshLayout, boolean success) {
-        return 0;
-    }
-
+    /**
+     * 状态改变时 更新界面
+     */
     @Override
     public void onStateChanged(@NonNull RefreshLayout refreshLayout, @NonNull RefreshState oldState, @NonNull RefreshState newState) {
         if (newState == RefreshState.ReleaseToLoad) {
