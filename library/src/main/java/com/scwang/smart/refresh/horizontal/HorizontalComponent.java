@@ -39,10 +39,9 @@ public abstract class HorizontalComponent extends SimpleComponent {
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        if (this.mWrappedView == null && this.mWrappedInternal == null) {
+        if (this.mWrappedInternal == null) {
             for (int i = 0; i < getChildCount(); i++) {
                 View child = getChildAt(i);
-                this.mWrappedView = child;
                 if (child instanceof RefreshComponent) {
                     this.mWrappedInternal = (RefreshComponent)child;
                 }
