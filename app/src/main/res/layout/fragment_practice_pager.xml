@@ -23,19 +23,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:srlEnableOverScrollBounce="false">
-        <FrameLayout
+        <com.scwang.smartrefresh.horizontal.HorizontalHeader
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+            <!-- 使用 HorizontalHeader 套住可以保证里面的 View 不被 90度旋转 -->
             <ImageView
                     android:id="@+id/header"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/dp_10"
                     android:layout_gravity="center"
-                    android:rotation="90"
+                    android:layout_centerInParent="true"
                     android:contentDescription="@string/app_name"
                     android:src="@drawable/loading_rabbit"/>
-        </FrameLayout>
+        </com.scwang.smartrefresh.horizontal.HorizontalHeader>
         <com.scwang.smartrefresh.horizontal.demo.widget.SmartViewPager
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -98,7 +99,6 @@
                             android:layout_margin="10dp"/>
                 </android.support.v7.widget.CardView>
             </FrameLayout>
-
             <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">

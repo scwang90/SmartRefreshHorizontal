@@ -133,7 +133,6 @@ public class SmartRefreshHorizontal extends SmartRefreshLayout {
                         l += div;
                         t -= div;
 
-//                        child.setTag(R.string.srl_tag, "GONE");
                         child.setRotation(90);
                         child.setTag(R.string.srl_component_falsify, child);
                         child.measure(MeasureSpec.makeMeasureSpec(w, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(h, MeasureSpec.EXACTLY));
