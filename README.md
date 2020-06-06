@@ -74,9 +74,8 @@ SmartRefreshLayout，并且版本要大于 1.1.0-beta-1 ，否则会出现找不
     //2.x
     implementation 'com.scwang.smart:refresh-layout-horizontal:2.0.0-alpha-1'
     implementation 'com.scwang.smart:refresh-layout-kernel:2.0.1'
-    implementation 'com.scwang.smart:refresh-header-classics:2.0.1'
+    implementation 'com.scwang.smart:refresh-header-classics:2.0.1'    //经典刷新头
     implementation 'com.scwang.smart:refresh-header-material:2.0.1'    //谷歌刷新头
-    implementation 'com.scwang.smart:refresh-header-falsify:2.0.1'     //虚拟刷新头
 ```
 
 ### 2. 在XML布局文件中添加 SmartRefreshHorizontal
