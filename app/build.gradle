@@ -34,6 +34,7 @@ android {
 
 repositories {
     maven { url "https://jitpack.io" }//BaseRecyclerViewAdapterHelper
+//    maven { url "https://bintray.com/scwang90/maven" }
 }
 
 dependencies {
@@ -48,7 +49,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation project(':library')
+//    implementation project(':library')
 
     // 基础依赖包，必须要依赖
     implementation 'com.gyf.immersionbar:immersionbar:3.0.0-beta02'
@@ -60,7 +61,7 @@ dependencies {
     implementation 'com.scwang.smart:refresh-header-classics:2.0.1'
     implementation 'com.scwang.smart:refresh-header-material:2.0.1'    //谷歌刷新头
     implementation 'com.scwang.smart:refresh-header-falsify:2.0.1'     //虚拟刷新头
-//    implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:0.0.1'
+    implementation 'com.scwang.smart:refresh-layout-horizontal:2.0.0-alpha-1'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50'
 
     implementation 'com.ogaclejapan.smarttablayout:library:1.7.0@aar'

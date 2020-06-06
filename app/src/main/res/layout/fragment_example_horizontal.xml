@@ -18,7 +18,6 @@
             android:id="@+id/refreshLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="80dp"
             android:clipChildren="false"
             android:clipToPadding="false"
             app:srlEnablePreviewInEditMode="true"
@@ -31,10 +30,8 @@
                 android:background="@android:color/white"
                 android:orientation="horizontal"
                 android:overScrollMode="never"
-                android:alpha="0.5"
                 app:layoutManager="android.support.v7.widget.LinearLayoutManager"
                 tools:listitem="@android:layout/simple_list_item_2" />
-
         <com.scwang.smart.refresh.header.MaterialHeader
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
