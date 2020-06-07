@@ -1,32 +1,25 @@
 package com.scwang.smartrefresh.horizontal.demo.fragment
 
-
 import android.graphics.drawable.Animatable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import com.scwang.smartrefresh.horizontal.demo.R
-import com.scwang.smartrefresh.horizontal.demo.activity.FragmentActivity
 import com.scwang.smartrefresh.layout.api.RefreshHeader
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener
 import kotlinx.android.synthetic.main.fragment_practice_pager.*
-import kotlinx.android.synthetic.main.fragment_practice_pager.refreshLayout
 
 /**
  * A simple [Fragment] subclass.
- *
+ * create an instance of this fragment.
  */
-class PracticePagerFragment : androidx.fragment.app.Fragment() {
+class PracticePager2Fragment : Fragment() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_practice_pager, container, false)
+        return inflater.inflate(R.layout.fragment_practice_pager2, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,9 +27,6 @@ class PracticePagerFragment : androidx.fragment.app.Fragment() {
 
         toolbar.setNavigationOnClickListener {
             activity?.finish()
-        }
-        pager2.setOnClickListener {
-            FragmentActivity.start(this, PracticePager2Fragment::class.java)
         }
 
         refreshLayout.setEnableOverScrollBounce(false)

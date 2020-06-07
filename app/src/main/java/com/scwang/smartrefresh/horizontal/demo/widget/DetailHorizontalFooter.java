@@ -1,19 +1,18 @@
 package com.scwang.smartrefresh.horizontal.demo.widget;
 
 import android.content.Context;
-import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+
+import com.scwang.smartrefresh.horizontal.HorizontalFooter;
 import com.scwang.smartrefresh.horizontal.demo.R;
-import com.scwang.smartrefresh.layout.api.RefreshFooter;
 import com.scwang.smartrefresh.layout.api.RefreshKernel;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.constant.RefreshState;
-import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
-import com.scwang.smartrefresh.layout.util.SmartUtil;
 
 public class DetailHorizontalFooter extends HorizontalFooter {
 
@@ -33,10 +32,6 @@ public class DetailHorizontalFooter extends HorizontalFooter {
         View.inflate(context, R.layout.widget_footer_detail_horizontal, this);
         mIvIcon = findViewById(R.id.footer_icon);
         mTvTitle = findViewById(R.id.footer_title);
-        if (!isInEditMode() && getPaddingTop() == 0 && getPaddingBottom() == 0) {
-            int padding = SmartUtil.dp2px(10);
-            setPadding(getPaddingLeft(), padding, getPaddingRight(), padding);
-        }
     }
 
     /**

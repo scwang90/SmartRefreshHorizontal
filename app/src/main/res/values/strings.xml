@@ -19,6 +19,7 @@
     <string name="practice_goods_buy">立即购买</string>
     <string name="practice_goods_trolley">加入购物车</string>
 
+    <string name="practice_pager2_fragment_title">ViewPager2</string>
     <string name="practice_pager_fragment_title">页面切换</string>
     <string name="practice_pager_fragment_description">页面切换左右刷新拖动</string>
     <string name="practice_pager_pager_title_1">Index 1</string>

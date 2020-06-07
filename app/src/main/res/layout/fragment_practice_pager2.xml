@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              android:background="@color/colorPrimary"
-              tools:context=".fragment.PracticePagerFragment">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorPrimary"
+        tools:context=".fragment.PracticePager2Fragment">
 
     <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
@@ -15,15 +16,7 @@
                 style="@style/AppTheme.Toolbar"
                 android:id="@id/toolbar"
                 app:navigationIcon="?attr/homeAsUpIndicator"
-                app:title="@string/practice_pager_fragment_title">
-            <TextView
-                    android:id="@+id/pager2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:background="?android:attr/selectableItemBackground"
-                    android:text="@string/practice_pager2_fragment_title"/>
-        </androidx.appcompat.widget.Toolbar>
+                app:title="@string/practice_pager_fragment_title"/>
     </com.google.android.material.appbar.AppBarLayout>
 
     <com.scwang.smartrefresh.horizontal.SmartRefreshHorizontal
@@ -45,7 +38,7 @@
                     android:contentDescription="@string/app_name"
                     android:src="@drawable/loading_rabbit"/>
         </com.scwang.smartrefresh.horizontal.HorizontalHeader>
-        <com.scwang.smartrefresh.horizontal.demo.widget.SmartViewPager
+        <com.scwang.smartrefresh.horizontal.demo.widget.SmartViewPager2
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
             <FrameLayout
@@ -136,7 +129,7 @@
                             android:layout_margin="10dp"/>
                 </androidx.cardview.widget.CardView>
             </FrameLayout>
-        </com.scwang.smartrefresh.horizontal.demo.widget.SmartViewPager>
+        </com.scwang.smartrefresh.horizontal.demo.widget.SmartViewPager2>
     </com.scwang.smartrefresh.horizontal.SmartRefreshHorizontal>
 
 </LinearLayout>
