@@ -89,8 +89,7 @@ public class SmartRefreshHorizontal extends SmartRefreshLayout {
         thisView.setRotation(-90);
     }
 
-    protected boolean isRefreshComponent(View child)
-    {
+    protected boolean isRefreshComponent(View child) {
         RefreshComponent header = mRefreshHeader;
         RefreshComponent footer = mRefreshFooter;
         return (header != null && (child == header || child == header.getView())) ||
