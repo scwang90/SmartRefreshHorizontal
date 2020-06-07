@@ -72,6 +72,9 @@ public class SmartViewPager2 extends FrameLayout {
         if (mAdapter != null) {
             mPager.setAdapter(null);
             for (View view : mAdapter.views) {
+                if (view.getParent() instanceof ViewGroup) {
+                    ((ViewGroup)view.getParent()).removeView(view);
+                }
                 addView(view);
             }
             mAdapter = null;
