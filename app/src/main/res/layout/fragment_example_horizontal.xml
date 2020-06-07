@@ -4,8 +4,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:clipChildren="false"
-        android:clipToPadding="false"
         tools:context="com.scwang.smart.refresh.horizontal.demo.fragment.ExampleBasicFragment">
 
     <android.support.v7.widget.Toolbar
@@ -17,17 +15,17 @@
     <com.scwang.smart.refresh.horizontal.SmartRefreshHorizontal
             android:id="@+id/refreshLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clipChildren="false"
-            android:clipToPadding="false"
+            android:layout_height="wrap_content"
             app:srlEnablePreviewInEditMode="true"
             app:srlEnableFooterTranslationContent="true"
             app:srlEnableHeaderTranslationContent="true">
+        <com.scwang.smart.refresh.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
         <android.support.v7.widget.RecyclerView
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/white"
+                android:layout_height="300dp"
                 android:orientation="horizontal"
                 android:overScrollMode="never"
                 app:layoutManager="android.support.v7.widget.LinearLayoutManager"

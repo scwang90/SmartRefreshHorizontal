@@ -89,10 +89,32 @@ public class SmartRefreshHorizontal extends SmartRefreshLayout {
         thisView.setRotation(-90);
     }
 
+    protected boolean isRefreshComponent(View child)
+    {
+        RefreshComponent header = mRefreshHeader;
+        RefreshComponent footer = mRefreshFooter;
+        return (header != null && (child == header || child == header.getView())) ||
+                (footer != null && (child == footer || child == footer.getView())) ;
+    }
 
     @Override
     @SuppressWarnings("SuspiciousNameCombination")
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        for (int i = 0, len = getChildCount(); i < len; i++) {
+            View child = getChildAt(i);
+            child.setTag(R.id.srl_tag, isRefreshComponent(child) ? "GONE" : "VISIBLE");
+        }
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        if (MeasureSpec.getMode(widthMeasureSpec) == MeasureSpec.AT_MOST) {
+            widthMeasureSpec = MeasureSpec.makeMeasureSpec(getMeasuredWidth(), MeasureSpec.EXACTLY);
+        }
+        if (MeasureSpec.getMode(heightMeasureSpec) == MeasureSpec.AT_MOST) {
+            heightMeasureSpec = MeasureSpec.makeMeasureSpec(getMeasuredHeight(), MeasureSpec.EXACTLY);
+        }
+        for (int i = 0, len = getChildCount(); i < len; i++) {
+            View child = getChildAt(i);
+            child.setTag(R.id.srl_tag, isRefreshComponent(child) ? "VISIBLE" : "GONE");
+        }
         super.onMeasure(heightMeasureSpec, widthMeasureSpec);
     }
 
@@ -113,35 +135,26 @@ public class SmartRefreshHorizontal extends SmartRefreshLayout {
 
             for (int i = 0, len = getChildCount(); i < len; i++) {
                 View child = getChildAt(i);
-                if ((header == null || child != header.getView()) && (footer == null || child != footer.getView())) {
-                    if (child.getVisibility() != GONE) {
-
-                        int w = height;
-                        int h = width;
-                        int l = paddingBottom;
-                        int t = paddingLeft;
-
-                        h -= paddingTop + paddingBottom;
-                        w -= paddingLeft + paddingRight;
-
-                        ViewGroup.LayoutParams params = child.getLayoutParams();
-                        if (params instanceof MarginLayoutParams) {
-                            MarginLayoutParams lp = (MarginLayoutParams) params;
-                            h -= lp.topMargin + lp.bottomMargin;
-                            w -= lp.leftMargin + lp.rightMargin;
-                            l += lp.bottomMargin;
-                            t += lp.leftMargin;
-                        }
-
-                        div = (h - w) / 2;
-                        l += div;
-                        t -= div;
-
-                        child.setRotation(90);
-                        child.setTag(R.id.srl_tag, "GONE");
-                        child.measure(MeasureSpec.makeMeasureSpec(w, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(h, MeasureSpec.EXACTLY));
-                        child.layout(l, t, l + w, t + h);
+                if (!isRefreshComponent(child) && child.getVisibility() != GONE) {
+                    int t = paddingLeft;
+                    int w = child.getMeasuredWidth();
+                    int h = child.getMeasuredHeight();
+                    int r = width - paddingTop;
+//
+                    ViewGroup.LayoutParams params = child.getLayoutParams();
+                    if (params instanceof MarginLayoutParams) {
+                        MarginLayoutParams lp = (MarginLayoutParams) params;
+                        t += lp.leftMargin;
+                        r -= lp.topMargin;
                     }
+//
+                    div = (h - w) / 2;
+                    t -= div;
+                    r -= div;
+//
+                    child.setRotation(90);
+                    child.setTag(R.id.srl_tag, "GONE");
+                    child.layout(r - w, t, r, t + h);
                 }
             }
             super.onLayout(changed, left, top, right, bottom);

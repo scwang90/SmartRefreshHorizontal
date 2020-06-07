@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
+import com.scwang.smart.refresh.header.ClassicsHeader;
 import com.scwang.smart.refresh.header.MaterialHeader;
 import com.scwang.smart.refresh.layout.SmartRefreshLayout;
 import com.scwang.smart.refresh.layout.api.RefreshFooter;
@@ -22,6 +23,13 @@ public class App extends Application {
             @Override
             public void initialize(@NonNull Context context, @NonNull RefreshLayout layout) {
                 layout.setPrimaryColorsId(R.color.colorPrimary, android.R.color.white);
+            }
+        });
+        SmartRefreshLayout.setDefaultRefreshHeaderCreator(new DefaultRefreshHeaderCreator() {
+            @NonNull
+            @Override
+            public RefreshHeader createRefreshHeader(@NonNull Context context, @NonNull RefreshLayout layout) {
+                return new ClassicsHeader(context);
             }
         });
         SmartRefreshHorizontal.setDefaultRefreshInitializer(new DefaultRefreshInitializer() {
