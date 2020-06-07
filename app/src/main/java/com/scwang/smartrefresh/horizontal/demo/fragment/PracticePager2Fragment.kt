@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import com.scwang.smartrefresh.horizontal.demo.R
 import com.scwang.smartrefresh.layout.api.RefreshHeader
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener
-import kotlinx.android.synthetic.main.fragment_practice_pager.*
+import kotlinx.android.synthetic.main.fragment_practice_pager2.*
 
 /**
  * A simple [Fragment] subclass.
