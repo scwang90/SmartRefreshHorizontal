@@ -14,13 +14,13 @@
     <com.scwang.smartrefresh.horizontal.SmartRefreshHorizontal
         android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:srlEnableHeaderTranslationContent="true"
         app:srlEnableFooterTranslationContent="true">
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="400dp"
             android:background="@android:color/white"
             android:overScrollMode="never"
             android:orientation="horizontal"
