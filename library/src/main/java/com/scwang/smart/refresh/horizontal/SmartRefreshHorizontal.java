@@ -115,12 +115,15 @@ public class SmartRefreshHorizontal extends SmartRefreshLayout {
             child.setTag(R.id.srl_tag, isRefreshComponent(child) ? "VISIBLE" : "GONE");
         }
         super.onMeasure(heightMeasureSpec, widthMeasureSpec);
+        super.setMeasuredDimension(getMeasuredHeight(), getMeasuredWidth());
     }
 
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        int width = right - left;
-        int height = bottom - top;
+        int width = bottom - top;
+        int height = right - left;
+//        int width = right - left;
+//        int height = bottom - top;
         int div = (height - width) / 2;
         if (isInLayout) {
             RefreshComponent header = mRefreshHeader;
@@ -138,7 +141,8 @@ public class SmartRefreshHorizontal extends SmartRefreshLayout {
                     int t = paddingLeft;
                     int w = child.getMeasuredWidth();
                     int h = child.getMeasuredHeight();
-                    int r = width - paddingTop;
+                    int r = height - paddingTop;
+//                    int r = width - paddingTop;
 //
                     ViewGroup.LayoutParams params = child.getLayoutParams();
                     if (params instanceof MarginLayoutParams) {
