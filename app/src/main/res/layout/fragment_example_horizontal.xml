@@ -20,7 +20,7 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="300dp"
             android:background="@android:color/white"
             android:overScrollMode="never"
             android:orientation="horizontal"
@@ -31,5 +31,13 @@
             android:layout_height="wrap_content"/>
     </com.scwang.smartrefresh.horizontal.SmartRefreshHorizontal>
 
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"/>
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"/>
 </LinearLayout>
 
