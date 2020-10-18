@@ -69,15 +69,15 @@ SmartRefreshLayout，并且版本要大于 1.1.0-beta-1 ，否则会出现找不
 ### 1. 在 build.gradle 中添加依赖
 ```gradle
     //androidx
-    implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:1.1.2-x'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:1.1.3-x'
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.3' //必须依赖 版本 1.1.0 以上
 
     //1.x
-    implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:1.1.2'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHorizontal:1.1.3'
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.3' //必须依赖 版本 1.1.0 以上
 
     //2.x
-    implementation 'com.scwang.smart:refresh-layout-horizontal:2.0.0'
+    implementation 'com.scwang.smart:refresh-layout-horizontal:2.0.1'
     implementation 'com.scwang.smart:refresh-layout-kernel:2.0.1'
     implementation 'com.scwang.smart:refresh-header-classics:2.0.1'    //经典刷新头
     implementation 'com.scwang.smart:refresh-header-material:2.0.1'    //谷歌刷新头
