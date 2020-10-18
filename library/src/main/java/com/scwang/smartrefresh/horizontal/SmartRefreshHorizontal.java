@@ -118,12 +118,17 @@ public class SmartRefreshHorizontal extends SmartRefreshLayout {
             child.setTag(R.string.srl_component_falsify, isRefreshComponent(child) ? "VISIBLE" : child);
         }
         super.onMeasure(heightMeasureSpec, widthMeasureSpec);
+        //2020-10-13 如果，真的直接颠倒，height width 的测量值，会导致，布局外的同级控件位置发生偏移，必须纠正 测量值
+        super.setMeasuredDimension(getMeasuredHeight(), getMeasuredWidth());
     }
 
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        int width = right - left;
-        int height = bottom - top;
+        //2020-10-13 setMeasuredDimension 纠正之后，获取宽高值的算法要修改
+        int width = bottom - top;
+        int height = right - left;
+//        int width = right - left;
+//        int height = bottom - top;
         int div = (height - width) / 2;
         if (isInLayout) {
             RefreshInternal header = mRefreshHeader;
@@ -141,7 +146,9 @@ public class SmartRefreshHorizontal extends SmartRefreshLayout {
                     int t = paddingLeft;
                     int w = child.getMeasuredWidth();
                     int h = child.getMeasuredHeight();
-                    int r = width - paddingTop;
+                    //2020-10-13 setMeasuredDimension 纠正之后，宽高的取值要修改
+                    int r = height - paddingTop;
+//                    int r = width - paddingTop;
 //
                     ViewGroup.LayoutParams params = child.getLayoutParams();
                     if (params instanceof MarginLayoutParams) {
